@@ -437,33 +437,49 @@ html,body{        margin: auto;
 <body>
 <div class="document" id="ubuntu">
 <h1 class="title">Ubuntu</h1>
-
+<table class="docinfo" frame="void" rules="none">
+<col class="docinfo-name" />
+<col class="docinfo-content" />
+<tbody valign="top">
+<tr class="penulis field"><th class="docinfo-name">Penulis:</th><td class="field-body">Yohan Sidik</td>
+</tr>
+</tbody>
+</table>
 <div class="contents topic" id="daftar-isi">
 <p class="topic-title">Daftar Isi</p>
 <ul class="simple">
 <li><a class="reference internal" href="#getting-started" id="id2">Getting Started</a><ul>
 <li><a class="reference internal" href="#partisi-harddisk" id="id3">Partisi Harddisk</a></li>
-<li><a class="reference internal" href="#git" id="id4">Git</a></li>
-<li><a class="reference internal" href="#latex" id="id5">Latex</a></li>
-<li><a class="reference internal" href="#pandoc" id="id6">Pandoc</a></li>
-<li><a class="reference internal" href="#python" id="id7">Python</a></li>
-<li><a class="reference internal" href="#inkscape" id="id8">Inkscape</a></li>
-<li><a class="reference internal" href="#make" id="id9">Make</a></li>
-<li><a class="reference internal" href="#markdown-editor-retext" id="id10">Markdown Editor (ReText)</a></li>
-<li><a class="reference internal" href="#id1" id="id11">Latex</a></li>
-<li><a class="reference internal" href="#networking" id="id12">Networking</a></li>
-<li><a class="reference internal" href="#google-chrome" id="id13">Google Chrome</a></li>
-<li><a class="reference internal" href="#terminal-pdf" id="id14">Terminal PDF</a></li>
-<li><a class="reference internal" href="#tree" id="id15">Tree</a></li>
+<li><a class="reference internal" href="#install-softwares" id="id4">Install Softwares</a></li>
+<li><a class="reference internal" href="#vim" id="id5">Vim</a></li>
+<li><a class="reference internal" href="#git" id="id6">Git</a></li>
+<li><a class="reference internal" href="#pandoc" id="id7">Pandoc</a></li>
+<li><a class="reference internal" href="#python" id="id8">Python</a></li>
+<li><a class="reference internal" href="#inkscape" id="id9">Inkscape</a></li>
+<li><a class="reference internal" href="#make" id="id10">Make</a></li>
+<li><a class="reference internal" href="#markdown-editor-retext" id="id11">Markdown Editor (ReText)</a></li>
+<li><a class="reference internal" href="#latex" id="id12">Latex</a></li>
+<li><a class="reference internal" href="#networking" id="id13">Networking</a><ul>
+<li><a class="reference internal" href="#samba" id="id14">Samba</a></li>
+<li><a class="reference internal" href="#edit-host-file" id="id15">Edit Host File</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#hieararki-filesystem" id="id16">Hieararki Filesystem</a></li>
-<li><a class="reference internal" href="#bootable-flash-drive" id="id17">Bootable Flash Drive</a></li>
-<li><a class="reference internal" href="#partisi-hardisk" id="id18">Partisi Hardisk</a></li>
-<li><a class="reference internal" href="#install-printer" id="id19">Install Printer</a></li>
-<li><a class="reference internal" href="#basic-command" id="id20">Basic Command</a></li>
-<li><a class="reference internal" href="#akses-network-drive" id="id21">Akses Network Drive</a></li>
-<li><a class="reference internal" href="#terminal-multiplexer" id="id22">Terminal Multiplexer</a></li>
+<li><a class="reference internal" href="#google-chrome" id="id16">Google Chrome</a></li>
+<li><a class="reference internal" href="#terminal-pdf" id="id17">Terminal PDF</a></li>
+<li><a class="reference internal" href="#tree" id="id18">Tree</a></li>
+<li><a class="reference internal" href="#restructuredtext" id="id19">reStructuredText</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#hieararki-filesystem" id="id20">Hieararki Filesystem</a></li>
+<li><a class="reference internal" href="#bootable-flash-drive" id="id21">Bootable Flash Drive</a></li>
+<li><a class="reference internal" href="#partisi-hardisk" id="id22">Partisi Hardisk</a></li>
+<li><a class="reference internal" href="#install-printer" id="id23">Install Printer</a></li>
+<li><a class="reference internal" href="#basic-command" id="id24">Basic Command</a></li>
+<li><a class="reference internal" href="#akses-network-drive" id="id25">Akses Network Drive</a></li>
+<li><a class="reference internal" href="#terminal-multiplexer" id="id26">Terminal Multiplexer</a></li>
+<li><a class="reference internal" href="#mounting-drive" id="id27">Mounting Drive</a></li>
+<li><a class="reference internal" href="#mounting-shared-network" id="id28">Mounting Shared Network</a></li>
+<li><a class="reference internal" href="#change-permission" id="id29">Change Permission</a></li>
 </ul>
 </div>
 <div class="section" id="getting-started">
@@ -471,11 +487,41 @@ html,body{        margin: auto;
 <div class="section" id="partisi-harddisk">
 <h2><a class="toc-backref" href="#id3">Partisi Harddisk</a></h2>
 <ul class="simple">
+<li>Software: gparted</li>
 <li><a class="reference external" href="https://itsfoss.com/gparted/">Membuat partisi di Ubuntu</a></li>
 </ul>
 </div>
+<div class="section" id="install-softwares">
+<h2><a class="toc-backref" href="#id4">Install Softwares</a></h2>
+<ul class="simple">
+<li>snap</li>
+</ul>
+<pre class="literal-block">
+$ sudo snap install namasoftware
+</pre>
+<ul class="simple">
+<li>apt</li>
+</ul>
+<pre class="literal-block">
+$ sudo apt install namasoftware
+</pre>
+<ul class="simple">
+<li>deb</li>
+</ul>
+<pre class="literal-block">
+$ sudo dpkg -i $DEB
+</pre>
+<p>$DEB adalah path ke instalasi file (deb).</p>
+</div>
+<div class="section" id="vim">
+<h2><a class="toc-backref" href="#id5">Vim</a></h2>
+<ul class="simple">
+<li>install: sudo apt install vim</li>
+<li><a class="reference external" href="https://github.com/yohanfs/.vim">vimrc</a></li>
+</ul>
+</div>
 <div class="section" id="git">
-<h2><a class="toc-backref" href="#id4">Git</a></h2>
+<h2><a class="toc-backref" href="#id6">Git</a></h2>
 <ul class="simple">
 <li>Command:</li>
 </ul>
@@ -489,14 +535,8 @@ $ git --version
 <li><a class="reference external" href="https://wiki.paparazziuav.org/wiki/Github_manual_for_Ubuntu">SSH</a></li>
 </ul>
 </div>
-<div class="section" id="latex">
-<h2><a class="toc-backref" href="#id5">Latex</a></h2>
-<ul class="simple">
-<li><a class="reference external" href="https://miktex.org/howto/install-miktex-unx">Install MiKTeX</a></li>
-</ul>
-</div>
 <div class="section" id="pandoc">
-<h2><a class="toc-backref" href="#id6">Pandoc</a></h2>
+<h2><a class="toc-backref" href="#id7">Pandoc</a></h2>
 <ul>
 <li><p class="first">Install</p>
 <ul class="simple">
@@ -514,39 +554,34 @@ $ sudo dpkg -i $DEB
 </ul>
 </div>
 <div class="section" id="python">
-<h2><a class="toc-backref" href="#id7">Python</a></h2>
+<h2><a class="toc-backref" href="#id8">Python</a></h2>
 <ul class="simple">
 <li>Sudah terinstall secara default</li>
-<li>Cek di terminal: python3 –version</li>
+<li>Cek di terminal: python3 -–version</li>
+<li>Install pip: <cite>sudo apt-get -y install python3-pip</cite></li>
 </ul>
 </div>
 <div class="section" id="inkscape">
-<h2><a class="toc-backref" href="#id8">Inkscape</a></h2>
+<h2><a class="toc-backref" href="#id9">Inkscape</a></h2>
 <ul class="simple">
 <li>Go to the “Ubuntu Software”</li>
 </ul>
 </div>
 <div class="section" id="make">
-<h2><a class="toc-backref" href="#id9">Make</a></h2>
+<h2><a class="toc-backref" href="#id10">Make</a></h2>
 <ul class="simple">
-<li>Command:</li>
-</ul>
-<pre class="literal-block">
-sudo apt-get install build-essential
-</pre>
-<ul class="simple">
-<li><a class="reference external" href="https://askubuntu.com/questions/161104/how-do-i-install-make">Referensi</a></li>
+<li>Install: <cite>sudo apt install make</cite></li>
 </ul>
 </div>
 <div class="section" id="markdown-editor-retext">
-<h2><a class="toc-backref" href="#id10">Markdown Editor (ReText)</a></h2>
+<h2><a class="toc-backref" href="#id11">Markdown Editor (ReText)</a></h2>
 <ul class="simple">
 <li>Command: sudo apt install -y retext</li>
 <li><a class="reference external" href="https://www.hiroom2.com/2017/05/16/ubuntu-16-04-write-markdown-with-retext/">Referensi</a></li>
 </ul>
 </div>
-<div class="section" id="id1">
-<span id="latex-1"></span><h2><a class="toc-backref" href="#id11">Latex</a></h2>
+<div class="section" id="latex">
+<span id="latex-1"></span><h2><a class="toc-backref" href="#id12">Latex</a></h2>
 <ul class="simple">
 <li><a class="reference external" href="https://www.tecrobust.com/insta-latex-ubuntu-texmaker-linux-ubuntu-latest/">Texlive</a></li>
 </ul>
@@ -561,9 +596,14 @@ $ sudo apt-add-repository ppa:blahota/texstudio
 $ sudo apt-get update
 $ sudo apt-get install texstudio
 </pre>
+<ul class="simple">
+<li><a class="reference external" href="https://miktex.org/download">MiKTeX</a></li>
+</ul>
 </div>
 <div class="section" id="networking">
-<h2><a class="toc-backref" href="#id12">Networking</a></h2>
+<h2><a class="toc-backref" href="#id13">Networking</a></h2>
+<div class="section" id="samba">
+<h3><a class="toc-backref" href="#id14">Samba</a></h3>
 <ul class="simple">
 <li><a class="reference external" href="https://ubuntu.com/tutorials/install-and-configure-samba#2-installing-samba">Install Samba</a></li>
 </ul>
@@ -578,8 +618,16 @@ $ sudo apt install samba
 <li><a class="reference external" href="https://linuxconfig.org/how-to-configure-static-ip-address-on-ubuntu-18-04-bionic-beaver-linux">Referensi: Setting LAN in ubuntu</a></li>
 </ul>
 </div>
+<div class="section" id="edit-host-file">
+<h3><a class="toc-backref" href="#id15">Edit Host File</a></h3>
+<p>Untuk mapping ip-address server.</p>
+<pre class="literal-block">
+sudo vim /etc/hosts
+</pre>
+</div>
+</div>
 <div class="section" id="google-chrome">
-<h2><a class="toc-backref" href="#id13">Google Chrome</a></h2>
+<h2><a class="toc-backref" href="#id16">Google Chrome</a></h2>
 <ul class="simple">
 <li>Google Chrome tidak tersedia di Ubuntu Software</li>
 <li><a class="reference external" href="https://itsfoss.com/install-chrome-ubuntu/">Install Google Chrome</a></li>
@@ -590,7 +638,7 @@ $ sudo dpkg -i google-chrome-stable_current_amd64.deb
 </pre>
 </div>
 <div class="section" id="terminal-pdf">
-<h2><a class="toc-backref" href="#id14">Terminal PDF</a></h2>
+<h2><a class="toc-backref" href="#id17">Terminal PDF</a></h2>
 <ul class="simple">
 <li><a class="reference external" href="http://manpages.ubuntu.com/manpages/bionic/man1/pdfunite.1.html">merge pdf: pdfunite</a></li>
 <li>Example: pdfunite sample1.pdf sample2.pdf sample.pdf</li>
@@ -599,7 +647,7 @@ $ sudo dpkg -i google-chrome-stable_current_amd64.deb
 </ul>
 </div>
 <div class="section" id="tree">
-<h2><a class="toc-backref" href="#id15">Tree</a></h2>
+<h2><a class="toc-backref" href="#id18">Tree</a></h2>
 <p><em>Directory tree</em> bisa diprint di terminal dengan tree command. Command tersebut adalah built-in
 di Windows. Sedangkan di ubuntu harus diinstall terlebih dahulu:</p>
 <pre class="literal-block">
@@ -612,9 +660,16 @@ tree
 <p>Hasilnya:</p>
 <img alt="images/tree.png" src="images/tree.png" />
 </div>
+<div class="section" id="restructuredtext">
+<h2><a class="toc-backref" href="#id19">reStructuredText</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://pypi.org/project/rst2html/">rst2html</a> : sudo pip3 install rst2html</li>
+<li><a class="reference external" href="https://pypi.org/project/rst2pdf/">rst2pdf</a> : sudo pip3 install rst2pdf</li>
+</ul>
+</div>
 </div>
 <div class="section" id="hieararki-filesystem">
-<h1><a class="toc-backref" href="#id16">Hieararki Filesystem</a></h1>
+<h1><a class="toc-backref" href="#id20">Hieararki Filesystem</a></h1>
 <p>Sistem folder di ubuntu dan deskripsinya:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -690,7 +745,7 @@ tree
 </ul>
 </div>
 <div class="section" id="bootable-flash-drive">
-<h1><a class="toc-backref" href="#id17">Bootable Flash Drive</a></h1>
+<h1><a class="toc-backref" href="#id21">Bootable Flash Drive</a></h1>
 <p>Berikut ini adalah langkah-langkah untuk membuat bootable usb. Bootable
 usb ini diperuntukkan untuk menginstall sebuah operating system (OS)
 misalnya ubuntu dan windows melalui usb.</p>
@@ -700,14 +755,14 @@ misalnya ubuntu dan windows melalui usb.</p>
 <li>Klik other untuk memilih ISO file.</li>
 <li>Pilih flaskdisk dan kemudian klik <strong>Make Startup Disk</strong>.</li>
 </ul>
-<p><img alt="image0" src="images/bootable.png" /></p>
+<img alt="images/bootable.png" src="images/bootable.png" />
 <p><strong>Referensi</strong></p>
 <ul class="simple">
 <li><a class="reference external" href="https://askubuntu.com/questions/876058/bootable-flash-drive-for-ubuntu">Bootable flash drive for ubuntu</a></li>
 </ul>
 </div>
 <div class="section" id="partisi-hardisk">
-<h1><a class="toc-backref" href="#id18">Partisi Hardisk</a></h1>
+<h1><a class="toc-backref" href="#id22">Partisi Hardisk</a></h1>
 <p>Partisi hardisk di Ubuntu tidak bisa dilakukan ketika Ubuntu sedang
 dioperasikan. Partisi dapat dilakukan dengan cara menjalankan instalasi
 ubuntu dari usb kemudian pilih <strong>live ubuntu</strong>. Selanjutnya, partisi
@@ -718,7 +773,7 @@ dapat dilakukan dengan program yang bernama Gparted.</p>
 <img alt="images/setelahpartisi.png" src="images/setelahpartisi.png" />
 </div>
 <div class="section" id="install-printer">
-<h1><a class="toc-backref" href="#id19">Install Printer</a></h1>
+<h1><a class="toc-backref" href="#id23">Install Printer</a></h1>
 <p>Printer canon diinstall di ubuntu dengan cara sebagai berikut:</p>
 <ul class="simple">
 <li>Tambahkan repositori</li>
@@ -739,7 +794,7 @@ sudo apt-get install cnijfilter-mp540series
 </ul>
 </div>
 <div class="section" id="basic-command">
-<h1><a class="toc-backref" href="#id20">Basic Command</a></h1>
+<h1><a class="toc-backref" href="#id24">Basic Command</a></h1>
 <p>Berikut ini adalah basic command ubuntu yang sering saya gunakan:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -810,7 +865,7 @@ sudo apt-get install cnijfilter-mp540series
 </table>
 </div>
 <div class="section" id="akses-network-drive">
-<h1><a class="toc-backref" href="#id21">Akses Network Drive</a></h1>
+<h1><a class="toc-backref" href="#id25">Akses Network Drive</a></h1>
 <p>Ada 2 metode untuk akses network drive di ubuntu.</p>
 <ol class="arabic simple">
 <li>GUI (file explorer)<ul>
@@ -832,7 +887,7 @@ tree connect failed: NT_STATUS_REQUEST_NOT_ACCEPTED
 </pre>
 </div>
 <div class="section" id="terminal-multiplexer">
-<h1><a class="toc-backref" href="#id22">Terminal Multiplexer</a></h1>
+<h1><a class="toc-backref" href="#id26">Terminal Multiplexer</a></h1>
 <p>Tmux adalah <em>terminal multiplexer</em> yang memungkinkan untuk membuka
 banyak tab dalam satu terminal.</p>
 <p><strong>Install</strong></p>
@@ -861,6 +916,114 @@ sudo apt install tmux
 <ul class="simple">
 <li><a class="reference external" href="https://github.com/tmux/tmux/wiki">github: tmux</a></li>
 <li><a class="reference external" href="https://linuxize.com/post/getting-started-with-tmux">linuxize: getting started with tmux</a></li>
+</ul>
+</div>
+<div class="section" id="mounting-drive">
+<h1><a class="toc-backref" href="#id27">Mounting Drive</a></h1>
+<ul class="simple">
+<li>Mount drive</li>
+</ul>
+<p>Buat sebuah folder sebagai <em>mount point</em>, misalnya <tt class="docutils literal">/mnt/Data</tt>.</p>
+<pre class="literal-block">
+$ sudo mkdir /mnt/Data
+$ sudo mount /dev/sdb6 /mnt/Data
+</pre>
+<p>Sekarang data bisa diakses di <tt class="docutils literal">/mnt/Data</tt>.</p>
+<ul class="simple">
+<li>Auto-mount at boot</li>
+</ul>
+<p>File yang harus diedit adalah <tt class="docutils literal">/etc/fstab</tt>. Sebelumnya cari terlebih dahulu
+UUID.</p>
+<pre class="literal-block">
+$ ls -al /dev/disk/by-uuid
+</pre>
+<p>Kemudian editlah <tt class="docutils literal">/etc/fstab</tt>, misalnya:</p>
+<pre class="literal-block">
+/etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# &lt;file system&gt; &lt;mount point&gt;   &lt;type&gt;  &lt;options&gt;       &lt;dump&gt;  &lt;pass&gt;
+# / was on /dev/sdb1 during installation
+UUID=63a46dce-b895-4c1f-9034-b1104694a956 /               ext4    errors=remount-ro 0       1
+# swap was on /dev/sdb5 during installation
+UUID=b9b9ee49-c69c-475b-894b-1279d44034ae none            swap    sw              0       0
+# data drive
+UUID=19fa40a3-fd17-412f-9063-a29ca0e75f93 /mnt/Data       ext4    defaults        0       0
+</pre>
+<ul class="simple">
+<li>Test Fstab</li>
+</ul>
+<p>Sebelum rebooting, cek terlebih dengan cara:</p>
+<pre class="literal-block">
+sudo mount -a
+</pre>
+<ul class="simple">
+<li>Unmounting drive dengan umount</li>
+</ul>
+<pre class="literal-block">
+sudo umount /mnt/Data
+</pre>
+<p>Referensi:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://confluence.jaytaala.com/display/TKB/Mount+drive+in+linux+and+set+auto-mount+at+boot">automatic mounting drive</a></li>
+</ul>
+</div>
+<div class="section" id="mounting-shared-network">
+<h1><a class="toc-backref" href="#id28">Mounting Shared Network</a></h1>
+<ul class="simple">
+<li>Buatlah mount point, misalnya <tt class="docutils literal">/mnt/Data</tt></li>
+</ul>
+<pre class="literal-block">
+$ sudo mkdir /mnt/Data
+</pre>
+<ul class="simple">
+<li>Install cifs-utils</li>
+</ul>
+<pre class="literal-block">
+$ sudo apt install cifs-utils
+</pre>
+<ul class="simple">
+<li>Buatlah sebuah file <tt class="docutils literal"><span class="pre">~/.smbcredentials</span></tt> dengan isi:</li>
+</ul>
+<pre class="literal-block">
+username=user
+password=pass
+</pre>
+<ul class="simple">
+<li>Ganti permission agar hanya root yang bisa baca smbcredentials</li>
+</ul>
+<pre class="literal-block">
+$ sudo chmod 700 ~/.smbcredentials
+</pre>
+<ul class="simple">
+<li>Edit <tt class="docutils literal">/etc/fstab</tt></li>
+</ul>
+<pre class="literal-block">
+$ sudo vim /etc/fstab
+</pre>
+<p>Tambahkan line berikut:</p>
+<pre class="literal-block">
+$ //192.168.1.120/storage /mnt/storage        cifs credentials=/root/.smbcredentials,file_mode=0777,dir_mode=0777 0 0
+</pre>
+<ul class="simple">
+<li>Test Fstab</li>
+</ul>
+<p>Sebelum rebooting, cek terlebih dengan cara:</p>
+<pre class="literal-block">
+$ sudo mount -a
+</pre>
+<p>Referensi:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://linuxize.com/post/how-to-mount-cifs-windows-share-on-linux/">Mount a network shared drive</a></li>
+</ul>
+</div>
+<div class="section" id="change-permission">
+<h1><a class="toc-backref" href="#id29">Change Permission</a></h1>
+<ul class="simple">
+<li><a class="reference external" href="https://www.pluralsight.com/blog/it-ops/linux-file-permissions">change permission</a></li>
 </ul>
 </div>
 </div>

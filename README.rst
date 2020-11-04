@@ -1,6 +1,8 @@
 Ubuntu
 ===================================================================================================
 
+:Penulis: Yohan Sidik
+
 .. contents:: Daftar Isi
 
 Getting Started
@@ -9,7 +11,38 @@ Getting Started
 Partisi Harddisk
 ***************************************************************************************************
 
+- Software: gparted
 -  `Membuat partisi di Ubuntu`_
+
+Install Softwares
+***************************************************************************************************
+
+- snap
+
+::
+
+	$ sudo snap install namasoftware
+	
+- apt
+
+::
+
+	$ sudo apt install namasoftware
+
+- deb
+
+::
+
+	$ sudo dpkg -i $DEB
+
+$DEB adalah path ke instalasi file (deb). 
+
+
+Vim
+***************************************************************************************************
+
+- install: sudo apt install vim
+- `vimrc`_
 
 Git
 ***************************************************************************************************
@@ -25,10 +58,7 @@ Git
 -  `Install`_
 -  `SSH`_
 
-Latex
-***************************************************************************************************
 
--  `Install MiKTeX`_
 
 Pandoc
 ***************************************************************************************************
@@ -48,8 +78,9 @@ Pandoc
 Python
 ***************************************************************************************************
 
--  Sudah terinstall secara default
--  Cek di terminal: python3 –version
+- Sudah terinstall secara default
+- Cek di terminal: python3 -–version
+- Install pip: `sudo apt-get -y install python3-pip`
 
 Inkscape
 ***************************************************************************************************
@@ -59,13 +90,7 @@ Inkscape
 Make
 ***************************************************************************************************
 
--  Command:
-
-::
-
-       sudo apt-get install build-essential
-
--  `Referensi <https://askubuntu.com/questions/161104/how-do-i-install-make>`__
+-  Install: `sudo apt install make`
 
 Markdown Editor (ReText)
 ***************************************************************************************************
@@ -92,8 +117,13 @@ Latex
        $ sudo apt-get update
        $ sudo apt-get install texstudio
 
+- `MiKTeX`_
+
 Networking
 ***************************************************************************************************
+
+Samba
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 -  `Install Samba`_
 
@@ -106,6 +136,15 @@ Networking
 -  Akses komputer dalam network: smb://IP-Address/
 -  `Referensi: Share a folder in ubuntu`_
 -  `Referensi: Setting LAN in ubuntu`_
+
+Edit Host File
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Untuk mapping ip-address server.
+
+::
+
+	sudo vim /etc/hosts
 
 Google Chrome
 ***************************************************************************************************
@@ -162,6 +201,13 @@ Hasilnya:
 
 .. image:: images/tree.png
 
+reStructuredText
+***************************************************************************************************
+
+- `rst2html`_ : sudo pip3 install rst2html
+- `rst2pdf`_ : sudo pip3 install rst2pdf
+
+
 Hieararki Filesystem
 --------------------------------------------------------------------------------------------------
 
@@ -209,7 +255,8 @@ misalnya ubuntu dan windows melalui usb.
 -  Klik other untuk memilih ISO file.
 -  Pilih flaskdisk dan kemudian klik **Make Startup Disk**.
 
-|image0|
+
+.. image:: images/bootable.png
 
 **Referensi**
 
@@ -217,7 +264,6 @@ misalnya ubuntu dan windows melalui usb.
 
 .. _Bootable flash drive for ubuntu: https://askubuntu.com/questions/876058/bootable-flash-drive-for-ubuntu
 
-.. |image0| image:: images/bootable.png
 
 Partisi Hardisk
 --------------------------------------------------------------------------------------------------
@@ -349,6 +395,135 @@ banyak tab dalam satu terminal.
 -  `github: tmux`_
 -  `linuxize: getting started with tmux`_
 
+Mounting Drive
+---------------------------------------------------------------------------------
+
+- Mount drive
+
+Buat sebuah folder sebagai *mount point*, misalnya ``/mnt/Data``. 
+
+::
+
+	$ sudo mkdir /mnt/Data
+	$ sudo mount /dev/sdb6 /mnt/Data
+
+Sekarang data bisa diakses di ``/mnt/Data``. 
+
+- Auto-mount at boot
+
+File yang harus diedit adalah ``/etc/fstab``. Sebelumnya cari terlebih dahulu
+UUID. 
+
+::
+
+	$ ls -al /dev/disk/by-uuid
+
+Kemudian editlah ``/etc/fstab``, misalnya:
+
+::
+
+	/etc/fstab: static file system information.
+	#
+	# Use 'blkid' to print the universally unique identifier for a
+	# device; this may be used with UUID= as a more robust way to name devices
+	# that works even if disks are added and removed. See fstab(5).
+	#
+	# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+	# / was on /dev/sdb1 during installation
+	UUID=63a46dce-b895-4c1f-9034-b1104694a956 /               ext4    errors=remount-ro 0       1
+	# swap was on /dev/sdb5 during installation
+	UUID=b9b9ee49-c69c-475b-894b-1279d44034ae none            swap    sw              0       0
+	# data drive
+	UUID=19fa40a3-fd17-412f-9063-a29ca0e75f93 /mnt/Data       ext4    defaults        0       0
+
+- Test Fstab
+
+Sebelum rebooting, cek terlebih dengan cara:
+
+::
+
+	sudo mount -a
+
+- Unmounting drive dengan umount
+
+::
+
+	sudo umount /mnt/Data
+
+Referensi:
+
+- `automatic mounting drive`_
+
+Mounting Shared Network
+---------------------------------------------------------------------------------
+
+- Buatlah mount point, misalnya ``/mnt/Data`` 
+
+::
+
+	$ sudo mkdir /mnt/Data
+
+- Install cifs-utils
+
+::
+
+	$ sudo apt install cifs-utils
+
+- Buatlah sebuah file ``~/.smbcredentials`` dengan isi:
+
+::
+
+	username=user
+	password=pass
+
+- Ganti permission agar hanya root yang bisa baca smbcredentials
+
+::
+
+	$ sudo chmod 700 ~/.smbcredentials
+
+
+- Edit ``/etc/fstab``
+
+::
+
+	$ sudo vim /etc/fstab
+
+Tambahkan line berikut:
+
+::
+
+	$ //192.168.1.120/storage /mnt/Data    cifs credentials=/root/.smbcredentials,file_mode=0777,dir_mode=0777 0 0
+
+- Test Fstab
+
+Sebelum rebooting, cek terlebih dengan cara:
+
+::
+
+	$ sudo mount -a
+
+
+Referensi:
+
+- `Mount a network shared drive`_
+
+Change Permission
+---------------------------------------------------------------------------------
+
+- `change permission`_
+
+
+
+
+
+
 .. _`github: tmux`: https://github.com/tmux/tmux/wiki
 .. _`linuxize: getting started with tmux`: https://linuxize.com/post/getting-started-with-tmux
-
+.. _`vimrc`: https://github.com/yohanfs/.vim
+.. _`rst2html`: https://pypi.org/project/rst2html/
+.. _`rst2pdf`: https://pypi.org/project/rst2pdf/
+.. _`MiKTeX`: https://miktex.org/download
+.. _`automatic mounting drive`: https://confluence.jaytaala.com/display/TKB/Mount+drive+in+linux+and+set+auto-mount+at+boot
+.. _`Mount a network shared drive`: https://linuxize.com/post/how-to-mount-cifs-windows-share-on-linux/
+.. _`change permission`: https://www.pluralsight.com/blog/it-ops/linux-file-permissions
