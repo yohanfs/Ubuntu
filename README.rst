@@ -208,6 +208,12 @@ reStructuredText
 - `rst2pdf`_ : sudo pip3 install rst2pdf
 
 
+Shotwell
+***************************************************************************************************
+
+Shotwell adalah image viewer dan editor. 
+
+
 Hieararki Filesystem
 --------------------------------------------------------------------------------------------------
 
@@ -332,6 +338,7 @@ delete file                         rm filenamedotextension
 delete semua dengan nama tertentu   rm \*filename*
 open file dengan default program    start filenamedotextension
 clear terminal                      clear atau CTRL + L
+manual command                      man ls (manual dari command ls)
 ================================== =======================================================
 
 Akses Network Drive
@@ -511,6 +518,68 @@ Referensi:
 Change Permission
 ---------------------------------------------------------------------------------
 
+Untuk melihat permission dari file atau folder:
+
+::
+
+	$ ls -l 
+
+atau dengan ditambah opsi **-t** apabila file ingin diurutkan berdasarkan waktu.
+
+::
+
+	$ ls -lt
+
+Misalnya ``ls -lt`` diterapkan pada folder demo, hasilnya adalah:
+
+.. image:: images/seepermission.png
+
+Pada gambar di atas ada nama ``fajar fajar`` yang secara berurutan. Itu
+maksudnya adalah nama user dan nama grup. Selanjutnya ada kode berikut:
+
+::
+
+	-rw-rw-r--
+
+dan
+
+::
+
+	drwxrwxr-x
+
+Tanda (-) di awal kode tersebut menandakan itu adalah sebuah file. Sedangkan (d)
+menandakan sebuah direktori. Kemudian rwx adalah kode untuk:
+
+- r=read
+- w=write
+- x=executable
+
+Kode rwx di atas bisa dinyatakan dengan huruf seperti contoh di atas atau dengan
+huruf sebagai berikut:
+
+- r=4
+- w=2
+- x=1
+
+Kode ``-rw-rw-r--``, dapat dibaca sebagai berikut:
+
+=======  =======  =======  =======
+Tipe       user     grup    other
+=======  =======  =======  =======
+ -         rw-       rw-     r--  
+File       6         6       4
+=======  =======  =======  =======
+
+
+Jadi apabila ingin mengubah permission dari sebuah file atau folder, bisa
+menggunakan *command* berikut:
+
+::
+
+	sudo chmod 664 namaFile.extension
+
+
+
 - `change permission`_
 
 
@@ -526,4 +595,4 @@ Change Permission
 .. _`MiKTeX`: https://miktex.org/download
 .. _`automatic mounting drive`: https://confluence.jaytaala.com/display/TKB/Mount+drive+in+linux+and+set+auto-mount+at+boot
 .. _`Mount a network shared drive`: https://linuxize.com/post/how-to-mount-cifs-windows-share-on-linux/
-.. _`change permission`: https://www.pluralsight.com/blog/it-ops/linux-file-permissions
+.. _`change permission`: https://opensource.com/article/19/6/understanding-linux-permissions
