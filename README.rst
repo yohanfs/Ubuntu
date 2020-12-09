@@ -476,7 +476,7 @@ Mounting Shared Network
 
 	$ sudo apt install cifs-utils
 
-- Buatlah sebuah file ``~/.smbcredentials`` dengan isi:
+- Buatlah sebuah file ``/root/.smbcredentials`` dengan isi:
 
 ::
 
@@ -487,7 +487,7 @@ Mounting Shared Network
 
 ::
 
-	$ sudo chmod 700 ~/.smbcredentials
+	$ sudo chmod 700 /root/.smbcredentials
 
 
 - Edit ``/etc/fstab``
@@ -500,7 +500,7 @@ Tambahkan line berikut:
 
 ::
 
-	$ //192.168.1.120/storage /mnt/Data    cifs credentials=/root/.smbcredentials,file_mode=0777,dir_mode=0777 0 0
+	//192.168.1.120/storage /mnt/Data    cifs credentials=/root/.smbcredentials,file_mode=0777,dir_mode=0777 0 0
 
 - Test Fstab
 
@@ -582,9 +582,20 @@ menggunakan *command* berikut:
 
 - `change permission`_
 
+Change Password
+---------------------------------------------------------------------------------
 
+Ganti password:
 
+::
 
+        $ passwd
+
+Ganti password root user:
+
+::
+
+        $ sudo passwd
 
 
 .. _`github: tmux`: https://github.com/tmux/tmux/wiki
