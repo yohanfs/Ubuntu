@@ -1,635 +1,732 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html >
 <head>
-    <title>Ubuntu</title>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="github-pandoc.css" />
-    <meta content="Yohan Sidik" name="Penulis" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!--[if lt IE 9]>
+                <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+        <![endif]-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+
+    <!-- <link rel="stylesheet" type="text/css" href="template.css" /> -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/diversen/pandoc-bootstrap-adaptive-template/959c3622/template.css" />
+
+    <link href="https://vjs.zencdn.net/5.4.4/video-js.css" rel="stylesheet" />
+
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <!-- <script type='text/javascript' src='menu/js/jquery.cookie.js'></script> -->
+    <!-- <script type='text/javascript' src='menu/js/jquery.hoverIntent.minified.js'></script> -->
+    <!-- <script type='text/javascript' src='menu/js/jquery.dcjqaccordion.2.7.min.js'></script> -->
+
+    <!-- <link href="menu/css/skins/blue.css" rel="stylesheet" type="text/css" /> -->
+    <!-- <link href="menu/css/skins/graphite.css" rel="stylesheet" type="text/css" /> -->
+    <!-- <link href="menu/css/skins/grey.css" rel="stylesheet" type="text/css" /> -->
+  
+    <!-- <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+        
+  
+    <!-- <script src="script.js"></script> -->
+  
+    <!-- <script src="jquery.sticky-kit.js "></script> -->
+    <script type='text/javascript' src='https://cdn.rawgit.com/diversen/pandoc-bootstrap-adaptive-template/959c3622/menu/js/jquery.cookie.js'></script>
+    <script type='text/javascript' src='https://cdn.rawgit.com/diversen/pandoc-bootstrap-adaptive-template/959c3622/menu/js/jquery.hoverIntent.minified.js'></script>
+    <script type='text/javascript' src='https://cdn.rawgit.com/diversen/pandoc-bootstrap-adaptive-template/959c3622/menu/js/jquery.dcjqaccordion.2.7.min.js'></script>
+
+    <link href="https://cdn.rawgit.com/diversen/pandoc-bootstrap-adaptive-template/959c3622/menu/css/skins/blue.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.rawgit.com/diversen/pandoc-bootstrap-adaptive-template/959c3622/menu/css/skins/graphite.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.rawgit.com/diversen/pandoc-bootstrap-adaptive-template/959c3622/menu/css/skins/grey.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.rawgit.com/ryangrose/easy-pandoc-templates/948e28e5/css/elegant_bootstrap.css" rel="stylesheet" type="text/css" />
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+    <script src="https://cdn.rawgit.com/diversen/pandoc-bootstrap-adaptive-template/959c3622/script.js"></script>
+  
+    <script src="https://cdn.rawgit.com/diversen/pandoc-bootstrap-adaptive-template/959c3622/jquery.sticky-kit.js"></script>
+    <meta name="generator" content="pandoc" />
+  <title>Ubuntu</title>
+  <style type="text/css">code{white-space: pre;}</style>
 </head>
 <body>
-    <section id="ubuntu">
-        <h1>Ubuntu</h1>
-        <aside id="daftar-isi" class="topic contents">
-            <h1>Daftar Isi</h1>
-            <ul>
-                <li><a href="#getting-started">Getting Started</a>
-                    <ul>
-                        <li><a href="#partisi-harddisk">Partisi Harddisk</a></li>
-                        <li><a href="#install-softwares">Install Softwares</a></li>
-                        <li><a href="#vim">Vim</a></li>
-                        <li><a href="#git">Git</a></li>
-                        <li><a href="#pandoc">Pandoc</a></li>
-                        <li><a href="#python">Python</a></li>
-                        <li><a href="#inkscape">Inkscape</a></li>
-                        <li><a href="#make">Make</a></li>
-                        <li><a href="#markdown-editor-retext">Markdown Editor (ReText)</a></li>
-                        <li><a href="#latex">Latex</a></li>
-                        <li><a href="#networking">Networking</a>
-                            <ul>
-                                <li><a href="#samba">Samba</a></li>
-                                <li><a href="#edit-host-file">Edit Host File</a></li>
+
+    
+    <div class="navbar navbar-static-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <span class="doc-title">Ubuntu</span>
+        <ul class="nav pull-right doc-info">
                             </ul>
-                        </li>
-                        <li><a href="#google-chrome">Google Chrome</a></li>
-                        <li><a href="#terminal-pdf">Terminal PDF</a></li>
-                        <li><a href="#tree">Tree</a></li>
-                        <li><a href="#restructuredtext">reStructuredText</a></li>
-                        <li><a href="#shotwell">Shotwell</a></li>
-                    </ul>
-                </li>
-                <li><a href="#hieararki-filesystem">Hieararki Filesystem</a></li>
-                <li><a href="#bootable-flash-drive">Bootable Flash Drive</a></li>
-                <li><a href="#partisi-hardisk">Partisi Hardisk</a></li>
-                <li><a href="#install-printer">Install Printer</a></li>
-                <li><a href="#basic-command">Basic Command</a></li>
-                <li><a href="#akses-network-drive">Akses Network Drive</a></li>
-                <li><a href="#terminal-multiplexer">Terminal Multiplexer</a></li>
-                <li><a href="#mounting-drive">Mounting Drive</a></li>
-                <li><a href="#mounting-shared-network">Mounting Shared Network</a></li>
-                <li><a href="#change-permission">Change Permission</a></li>
-                <li><a href="#change-password">Change Password</a></li>
-            </ul>
-        </aside>
-        <section id="getting-started">
-            <h2>Getting Started</h2>
-            <section id="partisi-harddisk">
-                <h3>Partisi Harddisk</h3>
-                <ul>
-                    <li>Software: gparted</li>
-                    <li><a href="https://itsfoss.com/gparted/">Membuat partisi di Ubuntu</a></li>
-                </ul>
-            </section>
-            <section id="install-softwares">
-                <h3>Install Softwares</h3>
-                <ul>
-                    <li>snap</li>
-                </ul>
-                <pre>$ sudo snap install namasoftware</pre>
-                <ul>
-                    <li>apt</li>
-                </ul>
-                <pre>$ sudo apt install namasoftware</pre>
-                <ul>
-                    <li>deb</li>
-                </ul>
-                <pre>$ sudo dpkg -i $DEB</pre>
-                <p>$DEB adalah path ke instalasi file (deb).</p>
-            </section>
-            <section id="vim">
-                <h3>Vim</h3>
-                <ul>
-                    <li>install: sudo apt install vim</li>
-                    <li><a href="https://github.com/yohanfs/.vim">vimrc</a></li>
-                </ul>
-            </section>
-            <section id="git">
-                <h3>Git</h3>
-                <ul>
-                    <li>Command:</li>
-                </ul>
-                <pre>$ sudo apt update
-$ sudo apt install git
-$ git --version</pre>
-                <ul>
-                    <li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-18-04">Install</a></li>
-                    <li><a href="https://wiki.paparazziuav.org/wiki/Github_manual_for_Ubuntu">SSH</a></li>
-                </ul>
-            </section>
-            <section id="pandoc">
-                <h3>Pandoc</h3>
-                <ul>
-                    <li>Install
-                        <ul>
-                            <li><a href="https://github.com/jgm/pandoc/releases/tag/2.9.2.1">download installer</a></li>
-                            <li>Command:</li>
-                        </ul>
-                        <pre>$ sudo dpkg -i $DEB</pre>
-                    </li>
-                    <li>$DEB adalah path ke instalasi file (deb)</li>
-                    <li><a href="https://pandoc.org/installing.html">Referensi</a></li>
-                </ul>
-            </section>
-            <section id="python">
-                <h3>Python</h3>
-                <ul>
-                    <li>Sudah terinstall secara default</li>
-                    <li>Cek di terminal: python3 -–version</li>
-                    <li>Install pip: <cite>sudo apt-get -y install python3-pip</cite></li>
-                </ul>
-            </section>
-            <section id="inkscape">
-                <h3>Inkscape</h3>
-                <ul>
-                    <li>Go to the “Ubuntu Software”</li>
-                </ul>
-            </section>
-            <section id="make">
-                <h3>Make</h3>
-                <ul>
-                    <li>Install: <cite>sudo apt install make</cite></li>
-                </ul>
-            </section>
-            <section id="markdown-editor-retext">
-                <h3>Markdown Editor (ReText)</h3>
-                <ul>
-                    <li>Command: sudo apt install -y retext</li>
-                    <li><a href="https://www.hiroom2.com/2017/05/16/ubuntu-16-04-write-markdown-with-retext/">Referensi</a></li>
-                </ul>
-            </section>
-            <a id="latex-1"></a>
-            <section id="latex">
-                <h3>Latex</h3>
-                <ul>
-                    <li><a href="https://www.tecrobust.com/insta-latex-ubuntu-texmaker-linux-ubuntu-latest/">Texlive</a></li>
-                </ul>
-                <pre>$ sudo apt-get install texlive-full</pre>
-                <ul>
-                    <li><a href="http://linuxpitstop.com/install-texstudio-on-ubuntu-linux-15-04/">Texstudio</a></li>
-                </ul>
-                <pre>$ sudo apt-add-repository ppa:blahota/texstudio
-$ sudo apt-get update
-$ sudo apt-get install texstudio</pre>
-                <ul>
-                    <li><a href="https://miktex.org/download">MiKTeX</a></li>
-                </ul>
-            </section>
-            <section id="networking">
-                <h3>Networking</h3>
-                <section id="samba">
-                    <h4>Samba</h4>
-                    <ul>
-                        <li><a href="https://ubuntu.com/tutorials/install-and-configure-samba#2-installing-samba">Install Samba</a></li>
-                    </ul>
-                    <pre>$ sudo apt update
-$ sudo apt install samba</pre>
-                    <ul>
-                        <li>Setting IP-Address: 192.168.0.2 &amp; Netmask: 255.255.255.0</li>
-                        <li>Akses komputer dalam network: <a href="smb://IP-Address/">smb://IP-Address/</a></li>
-                        <li><a href="http://ubuntuhandbook.org/index.php/2019/11/share-folder-ubuntu-18-04-step-by-step-guide/">Referensi: Share a folder in ubuntu</a></li>
-                        <li><a href="https://linuxconfig.org/how-to-configure-static-ip-address-on-ubuntu-18-04-bionic-beaver-linux">Referensi: Setting LAN in ubuntu</a></li>
-                    </ul>
-                </section>
-                <section id="edit-host-file">
-                    <h4>Edit Host File</h4>
-                    <p>Untuk mapping ip-address server.</p>
-                    <pre>sudo vim /etc/hosts</pre>
-                </section>
-            </section>
-            <section id="google-chrome">
-                <h3>Google Chrome</h3>
-                <ul>
-                    <li>Google Chrome tidak tersedia di Ubuntu Software</li>
-                    <li><a href="https://itsfoss.com/install-chrome-ubuntu/">Install Google Chrome</a></li>
-                </ul>
-                <pre>$ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-$ sudo dpkg -i google-chrome-stable_current_amd64.deb</pre>
-            </section>
-            <section id="terminal-pdf">
-                <h3>Terminal PDF</h3>
-                <ul>
-                    <li><a href="http://manpages.ubuntu.com/manpages/bionic/man1/pdfunite.1.html">merge pdf: pdfunite</a></li>
-                    <li>Example: pdfunite sample1.pdf sample2.pdf sample.pdf</li>
-                    <li><a href="http://qpdf.sourceforge.net/">extract pdf: qpdf</a></li>
-                    <li><a href="https://www.pdflabs.com/docs/pdftk-cli-examples/">pdftk</a></li>
-                </ul>
-            </section>
-            <section id="tree">
-                <h3>Tree</h3>
-                <p><em>Directory tree</em> bisa diprint di terminal dengan tree command. Command tersebut adalah built-in di Windows. Sedangkan di ubuntu harus diinstall terlebih dahulu:</p>
-                <pre>sudo apt-get install tree</pre>
-                <p>Selanjutnya bisa digunakan dengan mengetikkan tree command sebagai berikut:</p>
-                <pre>tree</pre>
-                <p>Hasilnya:</p>
-                <img src="images/tree.png" />
-            </section>
-            <section id="restructuredtext">
-                <h3>reStructuredText</h3>
-                <ul>
-                    <li><a href="https://pypi.org/project/rst2html/">rst2html</a> : sudo pip3 install rst2html</li>
-                    <li><a href="https://pypi.org/project/rst2pdf/">rst2pdf</a> : sudo pip3 install rst2pdf</li>
-                </ul>
-            </section>
-            <section id="shotwell">
-                <h3>Shotwell</h3>
-                <p>Shotwell adalah image viewer dan editor.</p>
-            </section>
-        </section>
-        <section id="hieararki-filesystem">
-            <h2>Hieararki Filesystem</h2>
-            <p>Sistem folder di ubuntu dan deskripsinya:</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Direktori</th>
-                        <th>Deskripsi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>/</td>
-                        <td>root directory</td>
-                    </tr>
-                    <tr>
-                        <td>/bin</td>
-                        <td>command binaries misalnya: cat, ls, cp</td>
-                    </tr>
-                    <tr>
-                        <td>/boot</td>
-                        <td>boot loader</td>
-                    </tr>
-                    <tr>
-                        <td>/dev</td>
-                        <td>device files, misalnya /dev/null, /dev/sda1</td>
-                    </tr>
-                    <tr>
-                        <td>/etc</td>
-                        <td>file konfigurasi</td>
-                    </tr>
-                    <tr>
-                        <td>/home</td>
-                        <td>home direktori</td>
-                    </tr>
-                    <tr>
-                        <td>/lib</td>
-                        <td>library untuk /bin dan /sbin</td>
-                    </tr>
-                    <tr>
-                        <td>/media</td>
-                        <td>mount point untuk removable media (usb drive)</td>
-                    </tr>
-                    <tr>
-                        <td>/mnt</td>
-                        <td>mounting drive</td>
-                    </tr>
-                    <tr>
-                        <td>/proc</td>
-                        <td>vitual filesystem</td>
-                    </tr>
-                    <tr>
-                        <td>/root</td>
-                        <td>home directory untuk root user</td>
-                    </tr>
-                    <tr>
-                        <td>/run</td>
-                        <td>run-time variable data</td>
-                    </tr>
-                    <tr>
-                        <td>/sbin</td>
-                        <td>system binaries, misalnya fsck, init, route</td>
-                    </tr>
-                    <tr>
-                        <td>/srv</td>
-                        <td>
-                            <ul>
-                                <li></li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>/tmp</td>
-                        <td>temporary space</td>
-                    </tr>
-                    <tr>
-                        <td>/usr</td>
-                        <td>programs, libraries, dan dokumentasi</td>
-                    </tr>
-                    <tr>
-                        <td>/var</td>
-                        <td>tempat penyimpanan untuk semua variable files</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p><strong>Referensi</strong></p>
+      </div>
+    </div>
+  </div>
+    <div class="container">
+    <div class="row">
+            <div id="TOC" class="span3">
+        <div class="well toc">
+
+        <ul>
+        <li><a href="#getting-started">Getting Started</a>
+        <ul>
+        <li><a href="#partisi-harddisk">Partisi Harddisk</a></li>
+        <li><a href="#install-softwares">Install Softwares</a></li>
+        <li><a href="#vim">Vim</a></li>
+        <li><a href="#git">Git</a></li>
+        <li><a href="#pandoc">Pandoc</a></li>
+        <li><a href="#python">Python</a></li>
+        <li><a href="#inkscape">Inkscape</a></li>
+        <li><a href="#make">Make</a></li>
+        <li><a href="#markdown-editor-retext">Markdown Editor (ReText)</a></li>
+        <li><a href="#latex-1">Latex</a></li>
+        <li><a href="#networking">Networking</a>
+        <ul>
+        <li><a href="#samba">Samba</a></li>
+        <li><a href="#edit-host-file">Edit Host File</a></li>
+        </ul></li>
+        <li><a href="#google-chrome">Google Chrome</a></li>
+        <li><a href="#terminal-pdf">Terminal PDF</a></li>
+        <li><a href="#tree">Tree</a></li>
+        <li><a href="#restructuredtext">reStructuredText</a></li>
+        <li><a href="#shotwell">Shotwell</a></li>
+        <li><a href="#inotifywait">Inotifywait</a></li>
+        <li><a href="#zathura">Zathura</a></li>
+        <li><a href="#install-printer">Install Printer</a></li>
+        <li><a href="#terminal-multiplexer">Terminal Multiplexer</a></li>
+        </ul></li>
+        <li><a href="#hieararki-filesystem">Hieararki Filesystem</a></li>
+        <li><a href="#bootable-flash-drive">Bootable Flash Drive</a></li>
+        <li><a href="#partisi-hardisk">Partisi Hardisk</a></li>
+        <li><a href="#basic-command">Basic Command</a></li>
+        <li><a href="#akses-network-drive">Akses Network Drive</a></li>
+        <li><a href="#mounting-drive">Mounting Drive</a></li>
+        <li><a href="#mounting-shared-network">Mounting Shared Network</a></li>
+        <li><a href="#change-permission">Change Permission</a></li>
+        <li><a href="#change-password">Change Password</a></li>
+        </ul>
+
+        </div>
+      </div>
+            <div class="span9">
+            <div class="contents">
+            <p>Daftar Isi</p>
+            </div>
+            <h1 id="getting-started">Getting Started</h1>
+            <h2 id="partisi-harddisk">Partisi Harddisk</h2>
             <ul>
-                <li><a href="https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard">Wikipedia - Fileystem Hierarchy Standard</a></li>
-                <li><cite>Tldp - General Overview of The Linux File System</cite></li>
+            <li>Software: gparted</li>
+            <li><a href="https://itsfoss.com/gparted/">Membuat partisi di Ubuntu</a></li>
             </ul>
-        </section>
-        <section id="bootable-flash-drive">
-            <h2>Bootable Flash Drive</h2>
-            <p>Berikut ini adalah langkah-langkah untuk membuat bootable usb. Bootable usb ini diperuntukkan untuk menginstall sebuah operating system (OS) misalnya ubuntu dan windows melalui usb.</p>
+            <h2 id="install-softwares">Install Softwares</h2>
             <ul>
-                <li>Colokkan flaskdisk (usb drive) ke usb port di komputer.</li>
-                <li>Buka <strong>Startup Disk Creator</strong>.</li>
-                <li>Klik other untuk memilih ISO file.</li>
-                <li>Pilih flaskdisk dan kemudian klik <strong>Make Startup Disk</strong>.</li>
+            <li>snap</li>
             </ul>
-            <img src="images/bootable.png" />
-            <p><strong>Referensi</strong></p>
+            <pre><code>$ sudo snap install namasoftware</code></pre>
             <ul>
-                <li><a href="https://askubuntu.com/questions/876058/bootable-flash-drive-for-ubuntu">Bootable flash drive for ubuntu</a></li>
+            <li>apt</li>
             </ul>
-        </section>
-        <section id="partisi-hardisk">
-            <h2>Partisi Hardisk</h2>
-            <p>Partisi hardisk di Ubuntu tidak bisa dilakukan ketika Ubuntu sedang dioperasikan. Partisi dapat dilakukan dengan cara menjalankan instalasi ubuntu dari usb kemudian pilih <strong>live ubuntu</strong>. Selanjutnya, partisi dapat dilakukan dengan program yang bernama Gparted.</p>
-            <p>Contoh hardisk sebelum partisi adalah:</p>
-            <img src="images/sebelumpartisi.png" />
-            <p>Dengan memilih menu <strong>Partition</strong>, maka hasil partisinya adalah sbb:</p>
-            <img src="images/setelahpartisi.png" />
-        </section>
-        <section id="install-printer">
-            <h2>Install Printer</h2>
+            <pre><code>$ sudo apt-get install namasoftware</code></pre>
+            <ul>
+            <li>deb</li>
+            </ul>
+            <pre><code>$ sudo dpkg -i $DEB</code></pre>
+            <p>$DEB adalah path ke instalasi file (deb).</p>
+            <h2 id="vim">Vim</h2>
+            <ul>
+            <li>install: sudo apt-get install vim</li>
+            <li><a href="https://github.com/yohanfs/.vim">vimrc</a></li>
+            </ul>
+            <h2 id="git">Git</h2>
+            <ul>
+            <li>Command:</li>
+            </ul>
+            <pre><code>$ sudo apt-get update
+            $ sudo apt-get install git
+            $ git --version</code></pre>
+            <ul>
+            <li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-18-04">Install</a></li>
+            <li><a href="https://wiki.paparazziuav.org/wiki/Github_manual_for_Ubuntu">SSH</a></li>
+            </ul>
+            <h2 id="pandoc">Pandoc</h2>
+            <ul>
+            <li><p>Install</p>
+            <ul>
+            <li><a href="https://github.com/jgm/pandoc/releases/tag/2.9.2.1">download installer</a></li>
+            <li>Command:</li>
+            </ul>
+            <pre><code>$ sudo dpkg -i $DEB</code></pre></li>
+            <li><p>$DEB adalah path ke instalasi file (deb)</p></li>
+            <li><p><a href="https://pandoc.org/installing.html">Referensi</a></p></li>
+            </ul>
+            <h2 id="python">Python</h2>
+            <ul>
+            <li>Sudah terinstall secara default</li>
+            <li>Cek di terminal: python3 -–version</li>
+            <li>Install pip: <span class="title-ref">sudo apt-get -y install python3-pip</span></li>
+            </ul>
+            <h2 id="inkscape">Inkscape</h2>
+            <ul>
+            <li><a href="https://inkscape.org/release/">Web: inkscape</a></li>
+            <li>Go to the “Ubuntu Software” atau</li>
+            </ul>
+            <pre><code>$ sudo add-apt-repository ppa:inkscape.dev/stable
+            $ sudo apt update
+            $ sudo apt install inkscape</code></pre>
+            <h2 id="make">Make</h2>
+            <ul>
+            <li>Install: <span class="title-ref">sudo apt-get install make</span></li>
+            </ul>
+            <h2 id="markdown-editor-retext">Markdown Editor (ReText)</h2>
+            <ul>
+            <li>Command: sudo apt-get install -y retext</li>
+            <li><a href="https://www.hiroom2.com/2017/05/16/ubuntu-16-04-write-markdown-with-retext/">Referensi</a></li>
+            </ul>
+            <h2 id="latex-1">Latex</h2>
+            <ul>
+            <li><a href="https://www.tecrobust.com/insta-latex-ubuntu-texmaker-linux-ubuntu-latest/">Texlive</a></li>
+            </ul>
+            <pre><code>$ sudo apt-get install texlive-full</code></pre>
+            <ul>
+            <li><a href="http://linuxpitstop.com/install-texstudio-on-ubuntu-linux-15-04/">Texstudio</a></li>
+            </ul>
+            <pre><code>$ sudo apt-add-repository ppa:blahota/texstudio
+            $ sudo apt-get update
+            $ sudo apt-get install texstudio</code></pre>
+            <ul>
+            <li><a href="https://miktex.org/download">MiKTeX</a></li>
+            </ul>
+            <p>Isu saat menjalankan <code>sudo apt-get update</code>:</p>
+            <blockquote>
+            <p>Skipping acquire of configured file 'universe/binary-i386/Packages'...</p>
+            </blockquote>
+            <p>Ini terjadi karena MiKTeX untuk Linux tidak support arsitektur i386. Solusinya adalah dengan mengedit:</p>
+            <pre><code>$ sudo vim /etc/apt/sources.list.d/miktek.list</code></pre>
+            <p>Tambahkan [arch=amd64] sehingga menjadi:</p>
+            <pre><code>$ deb [arch=amd64] http://miktex.org/download/ubuntu focal fossa</code></pre>
+            <h2 id="networking">Networking</h2>
+            <h3 id="samba">Samba</h3>
+            <ul>
+            <li><a href="https://ubuntu.com/tutorials/install-and-configure-samba#2-installing-samba">Install Samba</a></li>
+            </ul>
+            <pre><code>$ sudo apt-get update
+            $ sudo apt-get install samba</code></pre>
+            <ul>
+            <li>Akses komputer dalam network: <a href="smb://IP-Address/">smb://IP-Address/</a></li>
+            <li><a href="http://ubuntuhandbook.org/index.php/2019/11/share-folder-ubuntu-18-04-step-by-step-guide/">Referensi: Share a folder in ubuntu</a></li>
+            <li><a href="https://linuxconfig.org/how-to-configure-static-ip-address-on-ubuntu-18-04-bionic-beaver-linux">Referensi: Setting LAN in ubuntu</a></li>
+            </ul>
+            <h3 id="edit-host-file">Edit Host File</h3>
+            <p>Untuk mapping ip-address server.</p>
+            <pre><code>sudo vim /etc/hosts</code></pre>
+            <h2 id="google-chrome">Google Chrome</h2>
+            <ul>
+            <li>Google Chrome tidak tersedia di Ubuntu Software</li>
+            <li><a href="https://itsfoss.com/install-chrome-ubuntu/">Install Google Chrome</a></li>
+            </ul>
+            <pre><code>$ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+            $ sudo dpkg -i google-chrome-stable_current_amd64.deb</code></pre>
+            <h2 id="terminal-pdf">Terminal PDF</h2>
+            <ul>
+            <li><a href="http://manpages.ubuntu.com/manpages/bionic/man1/pdfunite.1.html">merge pdf: pdfunite</a></li>
+            <li>Example: pdfunite sample1.pdf sample2.pdf sample.pdf</li>
+            <li><a href="http://qpdf.sourceforge.net/">extract pdf: qpdf</a></li>
+            <li><a href="https://www.pdflabs.com/docs/pdftk-cli-examples/">pdftk</a></li>
+            </ul>
+            <h2 id="tree">Tree</h2>
+            <p><em>Directory tree</em> bisa diprint di terminal dengan tree command. Command tersebut adalah built-in di Windows. Sedangkan di ubuntu harus diinstall terlebih dahulu:</p>
+            <pre><code>sudo apt-get install tree</code></pre>
+            <p>Selanjutnya bisa digunakan dengan mengetikkan tree command sebagai berikut:</p>
+            <pre><code>tree</code></pre>
+            <p>Hasilnya:</p>
+            <p><img src="images/tree.png" alt="image" /></p>
+            <h2 id="restructuredtext">reStructuredText</h2>
+            <ul>
+            <li><a href="https://pypi.org/project/rst2html/">rst2html</a> : sudo pip3 install rst2html</li>
+            <li><a href="https://pypi.org/project/rst2pdf/">rst2pdf</a> : sudo pip3 install rst2pdf</li>
+            </ul>
+            <h2 id="shotwell">Shotwell</h2>
+            <p>Shotwell adalah image viewer dan editor.</p>
+            <h2 id="inotifywait">Inotifywait</h2>
+            <p>Inotifywait berguna untuk memantau aktivitas sebuah folder atau file.</p>
+            <pre><code>$ sudo apt-get install inotify-tools</code></pre>
+            <h2 id="zathura">Zathura</h2>
+            <p>Simple pdf viewer.</p>
+            <pre><code>$ sudo apt-get install zathura </code></pre>
+            <h2 id="install-printer">Install Printer</h2>
             <p>Printer canon diinstall di ubuntu dengan cara sebagai berikut:</p>
             <ul>
-                <li>Tambahkan repositori</li>
+            <li>Tambahkan repositori</li>
             </ul>
-            <pre>sudo add-apt-repository ppa:michael-gruz/canon
-sudo apt-get update</pre>
+            <pre><code>sudo add-apt-repository ppa:michael-gruz/canon
+            sudo apt-get update</code></pre>
             <ul>
-                <li>Install printer sesuai dengan versinya. Contohnya adalah printer MP540.</li>
+            <li>Install printer sesuai dengan versinya. Contohnya adalah printer MP540.</li>
             </ul>
-            <pre>sudo apt-get install cnijfilter-mp540series</pre>
+            <pre><code>sudo apt-get install cnijfilter-mp540series</code></pre>
             <p><strong>Referensi</strong></p>
             <ul>
-                <li><a href="https://askubuntu.com/questions/75014/how-can-i-install-a-canon-printer-or-scanner-driver">Askubuntu: Canon Printer</a></li>
+            <li><a href="https://askubuntu.com/questions/75014/how-can-i-install-a-canon-printer-or-scanner-driver">Askubuntu: Canon Printer</a></li>
             </ul>
-        </section>
-        <section id="basic-command">
-            <h2>Basic Command</h2>
-            <p>Berikut ini adalah basic command ubuntu yang sering saya gunakan:</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Task</th>
-                        <th>Command</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>update ubuntu package</td>
-                        <td>sudo apt-get update</td>
-                    </tr>
-                    <tr>
-                        <td>install package</td>
-                        <td>sudo apt-get install &lt;Package&gt;</td>
-                    </tr>
-                    <tr>
-                        <td>menggunakan super user</td>
-                        <td>sudo su</td>
-                    </tr>
-                    <tr>
-                        <td>open terminal</td>
-                        <td>CTRL + ALT + T</td>
-                    </tr>
-                    <tr>
-                        <td>membuat file baru</td>
-                        <td>touch filenamedotextension (contoh touch README.md)</td>
-                    </tr>
-                    <tr>
-                        <td>membuat folder baru</td>
-                        <td>mkdir namafolder</td>
-                    </tr>
-                    <tr>
-                        <td>berpindah ke subfolder</td>
-                        <td>cd namafolder</td>
-                    </tr>
-                    <tr>
-                        <td>memindah sebuah file</td>
-                        <td>mv asalFile tujuanFile</td>
-                    </tr>
-                    <tr>
-                        <td>exit dari terminal</td>
-                        <td>exit</td>
-                    </tr>
-                    <tr>
-                        <td>rename file</td>
-                        <td>mv file.ext1 file.ext2</td>
-                    </tr>
-                    <tr>
-                        <td>install deb packages</td>
-                        <td>sudo dpkg -i filenamedotdeb</td>
-                    </tr>
-                    <tr>
-                        <td>berpindah ke path sebelumnya</td>
-                        <td>cd ..</td>
-                    </tr>
-                    <tr>
-                        <td>menampilkan isi file</td>
-                        <td>cp filenamedotextension</td>
-                    </tr>
-                    <tr>
-                        <td>menampilkan isi direktori</td>
-                        <td>ls atau ls -a (memunculkan hidden files)</td>
-                    </tr>
-                    <tr>
-                        <td>delete file</td>
-                        <td>rm filenamedotextension</td>
-                    </tr>
-                    <tr>
-                        <td>delete semua dengan nama tertentu</td>
-                        <td>rm *filename*</td>
-                    </tr>
-                    <tr>
-                        <td>open file dengan default program</td>
-                        <td>start filenamedotextension</td>
-                    </tr>
-                    <tr>
-                        <td>clear terminal</td>
-                        <td>clear atau CTRL + L</td>
-                    </tr>
-                    <tr>
-                        <td>manual command</td>
-                        <td>man ls (manual dari command ls)</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-        <section id="akses-network-drive">
-            <h2>Akses Network Drive</h2>
-            <p>Ada 2 metode untuk akses network drive di ubuntu.</p>
-            <ol type="1">
-                <li>GUI (file explorer)
-                    <ul>
-                        <li>Install samba</li>
-                        <li>Other Locations &gt;&gt; Connect to Server &gt;&gt; Enter server address</li>
-                        <li>Server address format= <a href="smb://ip-address">smb://ip-address</a></li>
-                    </ul>
-                </li>
-                <li>Terminal
-                    <ul>
-                        <li>Install smbclient</li>
-                        <li><em>Command</em>: smbclient -L=ip-address</li>
-                    </ul>
-                </li>
-            </ol>
-            <p>Untuk cara 2, masih ada isu. Setelah daftar shared hardisk muncul, kemudian ketik smbclient //ip-address/L, maka akan muncul pesan:</p>
-            <pre>tree connect failed: NT_STATUS_REQUEST_NOT_ACCEPTED</pre>
-        </section>
-        <section id="terminal-multiplexer">
-            <h2>Terminal Multiplexer</h2>
+            <h2 id="terminal-multiplexer">Terminal Multiplexer</h2>
             <p>Tmux adalah <em>terminal multiplexer</em> yang memungkinkan untuk membuka banyak tab dalam satu terminal.</p>
             <p><strong>Install</strong></p>
-            <pre>sudo apt install tmux</pre>
+            <pre><code>sudo apt-get install tmux</code></pre>
             <p><strong>Run</strong></p>
             <ul>
-                <li>open terminal, kemudian ketik: tmux</li>
-                <li>split terminal:
-                    <ul>
-                        <li>horizontal: <code>Ctrl+b+"</code></li>
-                        <li>vertikal: <code>Ctrl+b+%</code></li>
-                    </ul>
-                </li>
-                <li>berpindah antar terminal:
-                    <ul>
-                        <li>next terminal: <code>Ctrl+b+o</code></li>
-                        <li>previous terminal: <code>Ctrl+b+;</code></li>
-                    </ul>
-                </li>
-                <li>menutup current terminal: <code>Ctrl+b+x</code></li>
-                <li>buka last session: open normal terminal, kemudian ketik: <code>tmux attach</code></li>
-                <li>kembali normal terminal: <code>Ctrl+b+d</code></li>
-                <li>list terminal: <code>tmux list-sessions</code></li>
+            <li>open terminal, kemudian ketik: tmux</li>
+            <li>split terminal:
+            <ul>
+            <li>horizontal: <code>Ctrl+b+"</code></li>
+            <li>vertikal: <code>Ctrl+b+%</code></li>
+            </ul></li>
+            <li>berpindah antar terminal:
+            <ul>
+            <li>next terminal: <code>Ctrl+b+o</code></li>
+            <li>previous terminal: <code>Ctrl+b+;</code></li>
+            </ul></li>
+            <li>menutup current terminal: <code>Ctrl+b+x</code></li>
+            <li>buka last session: open normal terminal, kemudian ketik: <code>tmux attach</code></li>
+            <li>kembali normal terminal: <code>Ctrl+b+d</code></li>
+            <li>list terminal: <code>tmux list-sessions</code></li>
             </ul>
             <p><strong>Referensi</strong></p>
             <ul>
-                <li><a href="https://github.com/tmux/tmux/wiki">github: tmux</a></li>
-                <li><a href="https://linuxize.com/post/getting-started-with-tmux">linuxize: getting started with tmux</a></li>
+            <li><a href="https://github.com/tmux/tmux/wiki">github: tmux</a></li>
+            <li><a href="https://linuxize.com/post/getting-started-with-tmux">linuxize: getting started with tmux</a></li>
             </ul>
-        </section>
-        <section id="mounting-drive">
-            <h2>Mounting Drive</h2>
+            <h1 id="hieararki-filesystem">Hieararki Filesystem</h1>
+            <p>Sistem folder di ubuntu dan deskripsinya:</p>
+            <table>
+            <thead>
+            <tr class="header">
+            <th>Direktori</th>
+            <th>Deskripsi</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+            <td>/</td>
+            <td><blockquote>
+            <p>root directory</p>
+            </blockquote></td>
+            </tr>
+            <tr class="even">
+            <td>/bin</td>
+            <td><blockquote>
+            <p>command binaries misalnya: cat, ls, cp</p>
+            </blockquote></td>
+            </tr>
+            <tr class="odd">
+            <td>/boot</td>
+            <td><blockquote>
+            <p>boot loader</p>
+            </blockquote></td>
+            </tr>
+            <tr class="even">
+            <td>/dev</td>
+            <td><blockquote>
+            <p>device files, misalnya /dev/null, /dev/sda1</p>
+            </blockquote></td>
+            </tr>
+            <tr class="odd">
+            <td>/etc</td>
+            <td><blockquote>
+            <p>file konfigurasi</p>
+            </blockquote></td>
+            </tr>
+            <tr class="even">
+            <td>/home</td>
+            <td><blockquote>
+            <p>home direktori</p>
+            </blockquote></td>
+            </tr>
+            <tr class="odd">
+            <td>/lib</td>
+            <td><blockquote>
+            <p>library untuk /bin dan /sbin</p>
+            </blockquote></td>
+            </tr>
+            <tr class="even">
+            <td>/media</td>
+            <td><blockquote>
+            <p>mount point untuk removable media (usb drive)</p>
+            </blockquote></td>
+            </tr>
+            <tr class="odd">
+            <td>/mnt</td>
+            <td><blockquote>
+            <p>mounting drive</p>
+            </blockquote></td>
+            </tr>
+            <tr class="even">
+            <td>/proc</td>
+            <td><blockquote>
+            <p>vitual filesystem</p>
+            </blockquote></td>
+            </tr>
+            <tr class="odd">
+            <td>/root</td>
+            <td><blockquote>
+            <p>home directory untuk root user</p>
+            </blockquote></td>
+            </tr>
+            <tr class="even">
+            <td>/run</td>
+            <td><blockquote>
+            <p>run-time variable data</p>
+            </blockquote></td>
+            </tr>
+            <tr class="odd">
+            <td>/sbin</td>
+            <td><blockquote>
+            <p>system binaries, misalnya fsck, init, route</p>
+            </blockquote></td>
+            </tr>
+            <tr class="even">
+            <td>/srv</td>
+            <td><blockquote>
             <ul>
-                <li>Mount drive</li>
+            <li></li>
+            </ul>
+            </blockquote></td>
+            </tr>
+            <tr class="odd">
+            <td>/tmp</td>
+            <td><blockquote>
+            <p>temporary space</p>
+            </blockquote></td>
+            </tr>
+            <tr class="even">
+            <td>/usr</td>
+            <td><blockquote>
+            <p>programs, libraries, dan dokumentasi</p>
+            </blockquote></td>
+            </tr>
+            <tr class="odd">
+            <td>/var</td>
+            <td><blockquote>
+            <p>tempat penyimpanan untuk semua variable files</p>
+            </blockquote></td>
+            </tr>
+            </tbody>
+            </table>
+            <p><strong>Referensi</strong></p>
+            <ul>
+            <li><a href="https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard">Wikipedia - Fileystem Hierarchy Standard</a></li>
+            <li><span class="title-ref">Tldp - General Overview of The Linux File System</span></li>
+            </ul>
+            <h1 id="bootable-flash-drive">Bootable Flash Drive</h1>
+            <p>Berikut ini adalah langkah-langkah untuk membuat bootable usb. Bootable usb ini diperuntukkan untuk menginstall sebuah operating system (OS) misalnya ubuntu dan windows melalui usb.</p>
+            <ul>
+            <li>Colokkan flaskdisk (usb drive) ke usb port di komputer.</li>
+            <li>Buka <strong>Startup Disk Creator</strong>.</li>
+            <li>Klik other untuk memilih ISO file.</li>
+            <li>Pilih flaskdisk dan kemudian klik <strong>Make Startup Disk</strong>.</li>
+            </ul>
+            <p><img src="images/bootable.png" alt="image" /></p>
+            <p><strong>Referensi</strong></p>
+            <ul>
+            <li><a href="https://askubuntu.com/questions/876058/bootable-flash-drive-for-ubuntu">Bootable flash drive for ubuntu</a></li>
+            </ul>
+            <h1 id="partisi-hardisk">Partisi Hardisk</h1>
+            <p>Partisi hardisk di Ubuntu tidak bisa dilakukan ketika Ubuntu sedang dioperasikan. Partisi dapat dilakukan dengan cara menjalankan instalasi ubuntu dari usb kemudian pilih <strong>live ubuntu</strong>. Selanjutnya, partisi dapat dilakukan dengan program yang bernama Gparted.</p>
+            <p>Contoh hardisk sebelum partisi adalah:</p>
+            <p><img src="images/sebelumpartisi.png" alt="image" /></p>
+            <p>Dengan memilih menu <strong>Partition</strong>, maka hasil partisinya adalah sbb:</p>
+            <p><img src="images/setelahpartisi.png" alt="image" /></p>
+            <h1 id="basic-command">Basic Command</h1>
+            <p>Berikut ini adalah basic command ubuntu yang sering saya gunakan:</p>
+            <table>
+            <thead>
+            <tr class="header">
+            <th>Task</th>
+            <th>Command</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+            <td>update ubuntu package</td>
+            <td><blockquote>
+            <p>sudo apt-get update</p>
+            </blockquote></td>
+            </tr>
+            <tr class="even">
+            <td>install package</td>
+            <td><blockquote>
+            <p>sudo apt-get install &lt;Package&gt;</p>
+            </blockquote></td>
+            </tr>
+            <tr class="odd">
+            <td>menggunakan super user</td>
+            <td><blockquote>
+            <p>sudo su</p>
+            </blockquote></td>
+            </tr>
+            <tr class="even">
+            <td>open terminal</td>
+            <td><blockquote>
+            <p>CTRL + ALT + T</p>
+            </blockquote></td>
+            </tr>
+            <tr class="odd">
+            <td>membuat file baru</td>
+            <td><blockquote>
+            <p>touch filenamedotextension (contoh touch README.md)</p>
+            </blockquote></td>
+            </tr>
+            <tr class="even">
+            <td>membuat folder baru</td>
+            <td><blockquote>
+            <p>mkdir namafolder</p>
+            </blockquote></td>
+            </tr>
+            <tr class="odd">
+            <td>berpindah ke subfolder</td>
+            <td><blockquote>
+            <p>cd namafolder</p>
+            </blockquote></td>
+            </tr>
+            <tr class="even">
+            <td>memindah sebuah file</td>
+            <td><blockquote>
+            <p>mv asalFile tujuanFile</p>
+            </blockquote></td>
+            </tr>
+            <tr class="odd">
+            <td>exit dari terminal</td>
+            <td><blockquote>
+            <p>exit</p>
+            </blockquote></td>
+            </tr>
+            <tr class="even">
+            <td>rename file</td>
+            <td><blockquote>
+            <p>mv file.ext1 file.ext2</p>
+            </blockquote></td>
+            </tr>
+            <tr class="odd">
+            <td>install deb packages</td>
+            <td><blockquote>
+            <p>sudo dpkg -i filenamedotdeb</p>
+            </blockquote></td>
+            </tr>
+            <tr class="even">
+            <td>berpindah ke path sebelumnya</td>
+            <td><blockquote>
+            <p>cd ..</p>
+            </blockquote></td>
+            </tr>
+            <tr class="odd">
+            <td>menampilkan isi file</td>
+            <td><blockquote>
+            <p>cp filenamedotextension</p>
+            </blockquote></td>
+            </tr>
+            <tr class="even">
+            <td>menampilkan isi direktori</td>
+            <td><blockquote>
+            <p>ls atau ls -a (memunculkan hidden files)</p>
+            </blockquote></td>
+            </tr>
+            <tr class="odd">
+            <td>delete file</td>
+            <td><blockquote>
+            <p>rm filenamedotextension</p>
+            </blockquote></td>
+            </tr>
+            <tr class="even">
+            <td>delete semua dengan nama tertentu</td>
+            <td><blockquote>
+            <p>rm *filename*</p>
+            </blockquote></td>
+            </tr>
+            <tr class="odd">
+            <td>open file dengan default program</td>
+            <td><blockquote>
+            <p>start filenamedotextension</p>
+            </blockquote></td>
+            </tr>
+            <tr class="even">
+            <td>clear terminal</td>
+            <td><blockquote>
+            <p>clear atau CTRL + L</p>
+            </blockquote></td>
+            </tr>
+            <tr class="odd">
+            <td>manual command</td>
+            <td><blockquote>
+            <p>man ls (manual dari command ls)</p>
+            </blockquote></td>
+            </tr>
+            </tbody>
+            </table>
+            <h1 id="akses-network-drive">Akses Network Drive</h1>
+            <p>Ada 2 metode untuk akses network drive di ubuntu.</p>
+            <ol type="1">
+            <li>GUI (file explorer)
+            <ul>
+            <li>Install samba</li>
+            <li>Other Locations &gt;&gt; Connect to Server &gt;&gt; Enter server address</li>
+            <li>Server address format= <a href="smb://ip-address">smb://ip-address</a></li>
+            </ul></li>
+            <li>Terminal
+            <ul>
+            <li>Install smbclient</li>
+            <li><em>Command</em>: smbclient -L=ip-address</li>
+            </ul></li>
+            </ol>
+            <p>Untuk cara 2, masih ada isu. Setelah daftar shared hardisk muncul, kemudian ketik smbclient //ip-address/L, maka akan muncul pesan:</p>
+            <pre><code>tree connect failed: NT_STATUS_REQUEST_NOT_ACCEPTED</code></pre>
+            <h1 id="mounting-drive">Mounting Drive</h1>
+            <ul>
+            <li>Mount drive</li>
             </ul>
             <p>Buat sebuah folder sebagai <em>mount point</em>, misalnya <code>/mnt/Data</code>.</p>
-            <pre>$ sudo mkdir /mnt/Data
-$ sudo mount /dev/sdb6 /mnt/Data</pre>
+            <pre><code>$ sudo mkdir /mnt/Data
+            $ sudo mount /dev/sdb6 /mnt/Data</code></pre>
             <p>Sekarang data bisa diakses di <code>/mnt/Data</code>.</p>
             <ul>
-                <li>Auto-mount at boot</li>
+            <li>Auto-mount at boot</li>
             </ul>
             <p>File yang harus diedit adalah <code>/etc/fstab</code>. Sebelumnya cari terlebih dahulu UUID.</p>
-            <pre>$ ls -al /dev/disk/by-uuid</pre>
+            <pre><code>$ ls -al /dev/disk/by-uuid</code></pre>
             <p>Kemudian editlah <code>/etc/fstab</code>, misalnya:</p>
-            <pre>/etc/fstab: static file system information.
-#
-# Use 'blkid' to print the universally unique identifier for a
-# device; this may be used with UUID= as a more robust way to name devices
-# that works even if disks are added and removed. See fstab(5).
-#
-# &lt;file system&gt; &lt;mount point&gt;   &lt;type&gt;  &lt;options&gt;       &lt;dump&gt;  &lt;pass&gt;
-# / was on /dev/sdb1 during installation
-UUID=63a46dce-b895-4c1f-9034-b1104694a956 /               ext4    errors=remount-ro 0       1
-# swap was on /dev/sdb5 during installation
-UUID=b9b9ee49-c69c-475b-894b-1279d44034ae none            swap    sw              0       0
-# data drive
-UUID=19fa40a3-fd17-412f-9063-a29ca0e75f93 /mnt/Data       ext4    defaults        0       0</pre>
+            <pre><code>/etc/fstab: static file system information.
+            #
+            # Use &#39;blkid&#39; to print the universally unique identifier for a
+            # device; this may be used with UUID= as a more robust way to name devices
+            # that works even if disks are added and removed. See fstab(5).
+            #
+            # &lt;file system&gt; &lt;mount point&gt;   &lt;type&gt;  &lt;options&gt;       &lt;dump&gt;  &lt;pass&gt;
+            # / was on /dev/sdb1 during installation
+            UUID=63a46dce-b895-4c1f-9034-b1104694a956 /               ext4    errors=remount-ro 0       1
+            # swap was on /dev/sdb5 during installation
+            UUID=b9b9ee49-c69c-475b-894b-1279d44034ae none            swap    sw              0       0
+            # data drive
+            UUID=19fa40a3-fd17-412f-9063-a29ca0e75f93 /mnt/Data       ext4    defaults        0       0</code></pre>
             <ul>
-                <li>Test Fstab</li>
+            <li>Test Fstab</li>
             </ul>
             <p>Sebelum rebooting, cek terlebih dengan cara:</p>
-            <pre>sudo mount -a</pre>
+            <pre><code>sudo mount -a</code></pre>
             <ul>
-                <li>Unmounting drive dengan umount</li>
+            <li>Unmounting drive dengan umount</li>
             </ul>
-            <pre>sudo umount /mnt/Data</pre>
+            <pre><code>sudo umount /mnt/Data</code></pre>
             <p>Referensi:</p>
             <ul>
-                <li><a href="https://confluence.jaytaala.com/display/TKB/Mount+drive+in+linux+and+set+auto-mount+at+boot">automatic mounting drive</a></li>
+            <li><a href="https://confluence.jaytaala.com/display/TKB/Mount+drive+in+linux+and+set+auto-mount+at+boot">automatic mounting drive</a></li>
             </ul>
-        </section>
-        <section id="mounting-shared-network">
-            <h2>Mounting Shared Network</h2>
+            <h1 id="mounting-shared-network">Mounting Shared Network</h1>
             <ul>
-                <li>Buatlah mount point, misalnya <code>/mnt/Data</code></li>
+            <li>Buatlah mount point, misalnya <code>/mnt/Data</code></li>
             </ul>
-            <pre>$ sudo mkdir /mnt/Data</pre>
+            <pre><code>$ sudo mkdir /mnt/Data</code></pre>
             <ul>
-                <li>Install cifs-utils</li>
+            <li>Install cifs-utils</li>
             </ul>
-            <pre>$ sudo apt install cifs-utils</pre>
+            <pre><code>$ sudo apt install cifs-utils</code></pre>
             <ul>
-                <li>Buatlah sebuah file <code>/root/.smbcredentials</code> dengan isi:</li>
+            <li>Buatlah sebuah file <code>/root/.smbcredentials</code> dengan isi:</li>
             </ul>
-            <pre>username=user
-password=pass</pre>
+            <pre><code>username=user
+            password=pass</code></pre>
             <ul>
-                <li>Ganti permission agar hanya root yang bisa baca smbcredentials</li>
+            <li>Ganti permission agar hanya root yang bisa baca smbcredentials</li>
             </ul>
-            <pre>$ sudo chmod 700 /root/.smbcredentials</pre>
+            <pre><code>$ sudo chmod 700 /root/.smbcredentials</code></pre>
             <ul>
-                <li>Edit <code>/etc/fstab</code></li>
+            <li>Edit <code>/etc/fstab</code></li>
             </ul>
-            <pre>$ sudo vim /etc/fstab</pre>
+            <pre><code>$ sudo vim /etc/fstab</code></pre>
             <p>Tambahkan line berikut:</p>
-            <pre>//192.168.1.120/storage /mnt/Data    cifs credentials=/root/.smbcredentials,file_mode=0777,dir_mode=0777 0 0</pre>
+            <pre><code>//192.168.1.120/storage /mnt/Data    cifs credentials=/root/.smbcredentials,file_mode=0777,dir_mode=0777 0 0</code></pre>
             <ul>
-                <li>Test Fstab</li>
+            <li>Test Fstab</li>
             </ul>
             <p>Sebelum rebooting, cek terlebih dengan cara:</p>
-            <pre>$ sudo mount -a</pre>
+            <pre><code>$ sudo mount -a</code></pre>
             <p>Referensi:</p>
             <ul>
-                <li><a href="https://linuxize.com/post/how-to-mount-cifs-windows-share-on-linux/">Mount a network shared drive</a></li>
+            <li><a href="https://linuxize.com/post/how-to-mount-cifs-windows-share-on-linux/">Mount a network shared drive</a></li>
             </ul>
-        </section>
-        <section id="change-permission">
-            <h2>Change Permission</h2>
+            <h1 id="change-permission">Change Permission</h1>
             <p>Untuk melihat permission dari file atau folder:</p>
-            <pre>$ ls -l</pre>
+            <pre><code>$ ls -l </code></pre>
             <p>atau dengan ditambah opsi <strong>-t</strong> apabila file ingin diurutkan berdasarkan waktu.</p>
-            <pre>$ ls -lt</pre>
+            <pre><code>$ ls -lt</code></pre>
             <p>Misalnya <code>ls -lt</code> diterapkan pada folder demo, hasilnya adalah:</p>
-            <img src="images/seepermission.png" />
+            <p><img src="images/seepermission.png" alt="image" /></p>
             <p>Pada gambar di atas ada nama <code>fajar fajar</code> yang secara berurutan. Itu maksudnya adalah nama user dan nama grup. Selanjutnya ada kode berikut:</p>
-            <pre>-rw-rw-r--</pre>
+            <pre><code>-rw-rw-r--</code></pre>
             <p>dan</p>
-            <pre>drwxrwxr-x</pre>
+            <pre><code>drwxrwxr-x</code></pre>
             <p>Tanda (-) di awal kode tersebut menandakan itu adalah sebuah file. Sedangkan (d) menandakan sebuah direktori. Kemudian rwx adalah kode untuk:</p>
             <ul>
-                <li>r=read</li>
-                <li>w=write</li>
-                <li>x=executable</li>
+            <li>r=read</li>
+            <li>w=write</li>
+            <li>x=executable</li>
             </ul>
             <p>Kode rwx di atas bisa dinyatakan dengan huruf seperti contoh di atas atau dengan huruf sebagai berikut:</p>
             <ul>
-                <li>r=4</li>
-                <li>w=2</li>
-                <li>x=1</li>
+            <li>r=4</li>
+            <li>w=2</li>
+            <li>x=1</li>
             </ul>
             <p>Kode <code>-rw-rw-r--</code>, dapat dibaca sebagai berikut:</p>
             <table>
-                <thead>
-                    <tr>
-                        <th>Tipe</th>
-                        <th>user</th>
-                        <th>grup</th>
-                        <th>other</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <ul>
-                                <li></li>
-                            </ul>
-                        </td>
-                        <td>rw-</td>
-                        <td>rw-</td>
-                        <td>r--</td>
-                    </tr>
-                    <tr>
-                        <td>File</td>
-                        <td>6</td>
-                        <td>6</td>
-                        <td>4</td>
-                    </tr>
-                </tbody>
+            <thead>
+            <tr class="header">
+            <th>Tipe</th>
+            <th>user</th>
+            <th>grup</th>
+            <th>other</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+            <td><blockquote>
+            <ul>
+            <li></li>
+            </ul>
+            </blockquote></td>
+            <td><blockquote>
+            <p>rw-</p>
+            </blockquote></td>
+            <td><blockquote>
+            <p>rw-</p>
+            </blockquote></td>
+            <td><blockquote>
+            <p>r--</p>
+            </blockquote></td>
+            </tr>
+            <tr class="even">
+            <td>File</td>
+            <td><blockquote>
+            <p>6</p>
+            </blockquote></td>
+            <td><blockquote>
+            <p>6</p>
+            </blockquote></td>
+            <td><blockquote>
+            <p>4</p>
+            </blockquote></td>
+            </tr>
+            </tbody>
             </table>
             <p>Jadi apabila ingin mengubah permission dari sebuah file atau folder, bisa menggunakan <em>command</em> berikut:</p>
-            <pre>sudo chmod 664 namaFile.extension</pre>
+            <pre><code>sudo chmod 664 namaFile.extension</code></pre>
             <ul>
-                <li><a href="https://opensource.com/article/19/6/understanding-linux-permissions">change permission</a></li>
+            <li><a href="https://opensource.com/article/19/6/understanding-linux-permissions">change permission</a></li>
             </ul>
-        </section>
-        <section id="change-password">
-            <h2>Change Password</h2>
+            <h1 id="change-password">Change Password</h1>
             <p>Ganti password:</p>
-            <pre>$ passwd</pre>
+            <pre><code>$ passwd</code></pre>
             <p>Ganti password root user:</p>
-            <pre>$ sudo passwd</pre>
-        </section>
-    </section>
+            <pre><code>$ sudo passwd</code></pre>
+            </div>
+    </div>
+  </div>
+
+  <script src="https://vjs.zencdn.net/5.4.4/video.js"></script>
+
 </body>
 </html>

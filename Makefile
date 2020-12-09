@@ -1,8 +1,7 @@
-.PHONY: watch all html pdf
+.PHONY: watch html
 
-SRC:= $(wildcard *.rst)
-OUT1:= $(SRC:%.rst=%.html)
-OUT2:= $(SRC:%.rst=%.pdf)
+SRC:= $(wildcard *.rst) $(wildcard */*.rst)
+OUT:= $(SRC:%.rst=%.html)
 
 watch:
 	while true; do \
@@ -10,14 +9,8 @@ watch:
 		make html; \
 	done
 
-all: html pdf
-
-html: $(OUT1)
-
-pdf: $(OUT2)
+html: $(OUT)
 
 %.html: %.rst
-	rst2html5 --stylesheet=github-pandoc.css $< $@
+	pandoc --toc $< -o $@ --template=easy_template.html
 
-%.pdf: %.rst
-	rst2pdf $< $@

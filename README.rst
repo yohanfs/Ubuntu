@@ -27,7 +27,7 @@ Install Softwares
 
 ::
 
-	$ sudo apt install namasoftware
+	$ sudo apt-get install namasoftware
 
 - deb
 
@@ -41,7 +41,7 @@ $DEB adalah path ke instalasi file (deb).
 Vim
 ***************************************************************************************************
 
-- install: sudo apt install vim
+- install: sudo apt-get install vim
 - `vimrc`_
 
 Git
@@ -51,8 +51,8 @@ Git
 
 ::
 
-       $ sudo apt update
-       $ sudo apt install git
+       $ sudo apt-get update
+       $ sudo apt-get install git
        $ git --version
 
 -  `Install`_
@@ -85,17 +85,24 @@ Python
 Inkscape
 ***************************************************************************************************
 
--  Go to the “Ubuntu Software”
+- `Web: inkscape <https://inkscape.org/release/>`_
+-  Go to the “Ubuntu Software” atau
+
+::
+
+	$ sudo add-apt-repository ppa:inkscape.dev/stable
+	$ sudo apt update
+	$ sudo apt install inkscape
 
 Make
 ***************************************************************************************************
 
--  Install: `sudo apt install make`
+-  Install: `sudo apt-get install make`
 
 Markdown Editor (ReText)
 ***************************************************************************************************
 
--  Command: sudo apt install -y retext
+-  Command: sudo apt-get install -y retext
 -  `Referensi <https://www.hiroom2.com/2017/05/16/ubuntu-16-04-write-markdown-with-retext/>`__
 
 .. _latex-1:
@@ -119,6 +126,26 @@ Latex
 
 - `MiKTeX`_
 
+Isu saat menjalankan ``sudo apt-get update``:
+
+	Skipping acquire of configured file 'universe/binary-i386/Packages'...
+
+Ini terjadi karena MiKTeX untuk Linux tidak support arsitektur i386. Solusinya
+adalah dengan mengedit:
+
+::
+
+	$ sudo vim /etc/apt/sources.list.d/miktek.list
+
+Tambahkan [arch=amd64] sehingga menjadi:
+
+::
+
+	$ deb [arch=amd64] http://miktex.org/download/ubuntu focal fossa
+
+
+
+
 Networking
 ***************************************************************************************************
 
@@ -129,10 +156,9 @@ Samba
 
 ::
 
-       $ sudo apt update
-       $ sudo apt install samba
+       $ sudo apt-get update
+       $ sudo apt-get install samba
 
--  Setting IP-Address: 192.168.0.2 & Netmask: 255.255.255.0
 -  Akses komputer dalam network: smb://IP-Address/
 -  `Referensi: Share a folder in ubuntu`_
 -  `Referensi: Setting LAN in ubuntu`_
@@ -213,6 +239,84 @@ Shotwell
 
 Shotwell adalah image viewer dan editor. 
 
+Inotifywait
+***************************************************************************************************
+
+Inotifywait berguna untuk memantau aktivitas sebuah folder atau file.
+
+::
+
+	$ sudo apt-get install inotify-tools
+
+Zathura
+***************************************************************************************************
+
+Simple pdf viewer.
+
+::
+
+	$ sudo apt-get install zathura 
+
+Install Printer
+*********************************************************************************
+
+Printer canon diinstall di ubuntu dengan cara sebagai berikut:
+
+-  Tambahkan repositori
+
+::
+
+   sudo add-apt-repository ppa:michael-gruz/canon
+   sudo apt-get update
+
+-  Install printer sesuai dengan versinya. Contohnya adalah printer MP540.
+
+::
+
+   sudo apt-get install cnijfilter-mp540series
+
+
+**Referensi**
+
+-  `Askubuntu: Canon Printer`_
+
+.. _`Askubuntu: Canon Printer`: https://askubuntu.com/questions/75014/how-can-i-install-a-canon-printer-or-scanner-driver
+
+Terminal Multiplexer
+*********************************************************************************
+
+Tmux adalah *terminal multiplexer* yang memungkinkan untuk membuka
+banyak tab dalam satu terminal.
+
+**Install**
+
+::
+
+   sudo apt-get install tmux
+
+**Run**
+
+-  open terminal, kemudian ketik: tmux
+-  split terminal:
+
+   -  horizontal: ``Ctrl+b+"``
+   -  vertikal: ``Ctrl+b+%``
+
+-  berpindah antar terminal:
+
+   -  next terminal: ``Ctrl+b+o``
+   -  previous terminal: ``Ctrl+b+;``
+
+-  menutup current terminal: ``Ctrl+b+x``
+-  buka last session: open normal terminal, kemudian ketik: ``tmux attach``
+-  kembali normal terminal: ``Ctrl+b+d``
+-  list terminal: ``tmux list-sessions``
+
+**Referensi**
+
+-  `github: tmux`_
+-  `linuxize: getting started with tmux`_
+
 
 Hieararki Filesystem
 --------------------------------------------------------------------------------------------------
@@ -287,30 +391,6 @@ Dengan memilih menu **Partition**, maka hasil partisinya adalah sbb:
 
 .. image:: images/setelahpartisi.png
 
-Install Printer
---------------------------------------------------------------------------------------------------
-
-Printer canon diinstall di ubuntu dengan cara sebagai berikut:
-
--  Tambahkan repositori
-
-::
-
-   sudo add-apt-repository ppa:michael-gruz/canon
-   sudo apt-get update
-
--  Install printer sesuai dengan versinya. Contohnya adalah printer MP540.
-
-::
-
-   sudo apt-get install cnijfilter-mp540series
-
-
-**Referensi**
-
--  `Askubuntu: Canon Printer`_
-
-.. _`Askubuntu: Canon Printer`: https://askubuntu.com/questions/75014/how-can-i-install-a-canon-printer-or-scanner-driver
 
 Basic Command
 --------------------------------------------------------------------------------------------------
@@ -366,41 +446,6 @@ kemudian ketik smbclient //ip-address/L, maka akan muncul pesan:
         tree connect failed: NT_STATUS_REQUEST_NOT_ACCEPTED
 
 
-Terminal Multiplexer
---------------------------------------------------------------------------------------------------
-
-
-Tmux adalah *terminal multiplexer* yang memungkinkan untuk membuka
-banyak tab dalam satu terminal.
-
-**Install**
-
-::
-
-   sudo apt install tmux
-
-**Run**
-
--  open terminal, kemudian ketik: tmux
--  split terminal:
-
-   -  horizontal: ``Ctrl+b+"``
-   -  vertikal: ``Ctrl+b+%``
-
--  berpindah antar terminal:
-
-   -  next terminal: ``Ctrl+b+o``
-   -  previous terminal: ``Ctrl+b+;``
-
--  menutup current terminal: ``Ctrl+b+x``
--  buka last session: open normal terminal, kemudian ketik: ``tmux attach``
--  kembali normal terminal: ``Ctrl+b+d``
--  list terminal: ``tmux list-sessions``
-
-**Referensi**
-
--  `github: tmux`_
--  `linuxize: getting started with tmux`_
 
 Mounting Drive
 ---------------------------------------------------------------------------------
