@@ -135,13 +135,13 @@ adalah dengan mengedit:
 
 ::
 
-	$ sudo vim /etc/apt/sources.list.d/miktek.list
+	$ sudo vim /etc/apt/sources.list.d/miktex.list
 
 Tambahkan [arch=amd64] sehingga menjadi:
 
 ::
 
-	$ deb [arch=amd64] http://miktex.org/download/ubuntu focal fossa
+	$ deb [arch=amd64] http://miktex.org/download/ubuntu focal universe
 
 
 
