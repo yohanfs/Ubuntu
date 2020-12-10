@@ -12,5 +12,5 @@ watch:
 html: $(OUT)
 
 %.html: %.rst
-	pandoc --toc $< -o $@ --template=easy_template.html
+	pandoc --toc $< -o $@ --template=html/uikit.html
 
