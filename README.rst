@@ -40,16 +40,33 @@ $DEB adalah path ke instalasi file (deb).
 Uninstall Softwares
 ***************************************************************************************************
 
+**apt**
+
 ::
 
 	$ sudo apt-get purge <program name>
 
+**snap**
+
+::
+
+	$ sudo snap remove <software name>
+
+
 Installed Softwares
 ***************************************************************************************************
+
+**apt**
 
 ::
 
 	$ apt list --installed
+
+**snap**
+
+::
+
+	$ snap list
 
 
 Vim
