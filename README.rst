@@ -361,7 +361,7 @@ Direktori                    Deskripsi
 /bin                         command binaries misalnya: cat, ls, cp
 /boot                        boot loader
 /dev                         device files, misalnya /dev/null, /dev/sda1
-/etc                         file konfigurasi
+/etc                         file konfigurasi (text based)
 /home                        home direktori
 /lib                         library untuk /bin dan /sbin
 /media                       mount point untuk removable media (usb drive)
@@ -370,7 +370,7 @@ Direktori                    Deskripsi
 /root                        home directory untuk root user
 /run                         run-time variable data
 /sbin                        system binaries, misalnya fsck, init, route
-/srv                         - 
+/srv                         serve folder. ex untuk ftp, rsync, www, cvs
 /tmp                         temporary space
 /usr                         programs, libraries, dan dokumentasi
 /var                         tempat penyimpanan untuk semua variable files 
@@ -380,9 +380,11 @@ Direktori                    Deskripsi
 
 - `Wikipedia - Fileystem Hierarchy Standard`_
 - `Tldp - General Overview of The Linux File System`
+- `Understanding the linux directory layout`_
 
 .. _Wikipedia - Fileystem Hierarchy Standard: https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard
 .. _Tldp - General Overview of The Linux File System: https://tldp.org/LDP/intro-linux/html/sect_03_01.html 
+.. _`Understanding the linux directory layout`: https://www.nixtutor.com/linux/understanding-the-linux-directory-layout/
 
 Bootable Flash Drive 
 --------------------------------------------------------------------------------------------------
@@ -409,6 +411,8 @@ misalnya ubuntu dan windows melalui usb.
 Partisi Hardisk
 --------------------------------------------------------------------------------------------------
 
+**Gparted**
+
 Partisi hardisk di Ubuntu tidak bisa dilakukan ketika Ubuntu sedang
 dioperasikan. Partisi dapat dilakukan dengan cara menjalankan instalasi
 ubuntu dari usb kemudian pilih **live ubuntu**. Selanjutnya, partisi
@@ -422,6 +426,26 @@ Dengan memilih menu **Partition**, maka hasil partisinya adalah sbb:
 
 .. image:: images/setelahpartisi.png
 
+**Daftar Partisi**
+
+::
+
+	$ ls -l /dev/disk/by-label
+
+atau
+
+::
+
+	$ ls -l /dev/disk/by-id
+
+atau
+
+::
+
+
+	$ ls -l /dev/disk/by-uuid
+
+uuid = *universal unique identifier* 
 
 Basic Command
 --------------------------------------------------------------------------------------------------
@@ -505,19 +529,8 @@ Kemudian editlah ``/etc/fstab``, misalnya:
 
 ::
 
-	/etc/fstab: static file system information.
-	#
-	# Use 'blkid' to print the universally unique identifier for a
-	# device; this may be used with UUID= as a more robust way to name devices
-	# that works even if disks are added and removed. See fstab(5).
-	#
-	# <file system> <mount point>   <type>  <options>       <dump>  <pass>
-	# / was on /dev/sdb1 during installation
-	UUID=63a46dce-b895-4c1f-9034-b1104694a956 /               ext4    errors=remount-ro 0       1
-	# swap was on /dev/sdb5 during installation
-	UUID=b9b9ee49-c69c-475b-894b-1279d44034ae none            swap    sw              0       0
-	# data drive
-	UUID=19fa40a3-fd17-412f-9063-a29ca0e75f93 /mnt/Data       ext4    defaults        0       0
+	UUID=xxxxxxx /mnt/Data   ext4    defaults        0       0  # internal drive
+	UUID=xxxxxxx /mnt/usb    ntfs    uid=1000,gid=1000,umask=022 0 1
 
 - Test Fstab
 
@@ -673,6 +686,49 @@ Ganti password root user:
 
         $ sudo passwd
 
+UID dan GID
+---------------------------------------------------------------------------------
+
+Mencari uid user:
+
+::
+
+	$ id -u <username>
+
+Mencari gid:
+
+::
+
+	$ id -g <username>
+
+Mencari semua grup dari seorang user:
+
+::
+
+	$ id -G <username>
+
+Mencari uid dan gid sebuah user:
+
+::
+
+	$ id <username>
+
+
+**Referensi**
+
+- `Linux sysadmin basics: uid and gid`_
+- `Find uid and gid`_
+
+Umask
+---------------------------------------------------------------------------------
+
+
+**Referensi**
+
+- `What is umask?`_
+
+
+.. Referensi
 
 .. _`github: tmux`: https://github.com/tmux/tmux/wiki
 .. _`linuxize: getting started with tmux`: https://linuxize.com/post/getting-started-with-tmux
@@ -683,3 +739,6 @@ Ganti password root user:
 .. _`automatic mounting drive`: https://confluence.jaytaala.com/display/TKB/Mount+drive+in+linux+and+set+auto-mount+at+boot
 .. _`Mount a network shared drive`: https://linuxize.com/post/how-to-mount-cifs-windows-share-on-linux/
 .. _`change permission`: https://opensource.com/article/19/6/understanding-linux-permissions
+.. _`Linux sysadmin basics: uid and gid`: https://www.redhat.com/sysadmin/user-account-gid-uid
+.. _`What is umask?`: https://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html
+.. _`Find uid and gid`: https://kb.iu.edu/d/adwf
