@@ -826,6 +826,17 @@ Untuk umask=077, pengertiannya adalah:
 
 - `What is umask?`_
 
+Kapasitas Disk
+---------------------------------------------------------------------------------
+
+::
+
+	df -h
+
+
+
+
+
 
 .. Referensi
 
