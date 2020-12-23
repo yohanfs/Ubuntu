@@ -557,7 +557,7 @@ Alamat /dev/sdb6, dapat dilihat dari:
 
 ::
 
-	$ df -h
+	$ lsblk
 
 **Auto Mounting**
 
