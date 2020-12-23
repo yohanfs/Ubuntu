@@ -147,14 +147,6 @@ Latex
 
        $ sudo apt-get install texlive-full
 
--  `Texstudio`_
-
-::
-
-       $ sudo apt-add-repository ppa:blahota/texstudio
-       $ sudo apt-get update
-       $ sudo apt-get install texstudio
-
 - `MiKTeX`_
 
 Isu saat menjalankan ``sudo apt-get update``:
@@ -189,6 +181,32 @@ Samba
 
        $ sudo apt-get update
        $ sudo apt-get install samba
+
+- Pilih folder yang akan dishare, misalnya:
+
+::
+
+	/mnt/data
+
+- Aturlah file berikut:
+
+::
+
+	$ sudo vim /etc/samba/smb.conf
+
+Tambahkan *script* berikut pada bagian akhir smb.conf
+
+::
+
+	[namashare]
+	path = /mnt/data
+	writeable = Yes
+	create mask = 0777
+	directory mask = 0777
+	public = no
+
+
+**Referens**
 
 -  Akses komputer dalam network: smb://IP-Address/
 -  `Referensi: Share a folder in ubuntu`_
@@ -291,6 +309,9 @@ Simple pdf viewer.
 Install Printer
 *********************************************************************************
 
+Canon
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 Printer canon diinstall di ubuntu dengan cara sebagai berikut:
 
 -  Tambahkan repositori
@@ -348,6 +369,22 @@ banyak tab dalam satu terminal.
 -  `github: tmux`_
 -  `linuxize: getting started with tmux`_
 
+Only Office
+*********************************************************************************
+
+Alternatif untuk Microsoft Office. 
+
+- Install via Snap (setting juga file permission di snap page)
+- Untuk menambahkan font, simpan .ttf format di:
+
+::
+
+	/usr/share/fonts/truetype
+
+Buatlahlah folder baru dengan nama onlyoffice pada path di atas untuk menyimpan
+font-nya.
+
+- `Download fonts`_
 
 Hieararki Filesystem
 --------------------------------------------------------------------------------------------------
@@ -505,7 +542,7 @@ kemudian ketik smbclient //ip-address/L, maka akan muncul pesan:
 Mounting Drive
 ---------------------------------------------------------------------------------
 
-- Mount drive
+**Manual**
 
 Buat sebuah folder sebagai *mount point*, misalnya ``/mnt/Data``. 
 
@@ -516,10 +553,16 @@ Buat sebuah folder sebagai *mount point*, misalnya ``/mnt/Data``.
 
 Sekarang data bisa diakses di ``/mnt/Data``. 
 
-- Auto-mount at boot
+Alamat /dev/sdb6, dapat dilihat dari:
+
+::
+
+	$ df -h
+
+**Auto Mounting**
 
 File yang harus diedit adalah ``/etc/fstab``. Sebelumnya cari terlebih dahulu
-UUID. 
+UUID dari drive yang akan dimounting. 
 
 ::
 
@@ -527,10 +570,28 @@ UUID.
 
 Kemudian editlah ``/etc/fstab``, misalnya:
 
+- untuk internal drive
+
 ::
 
-	UUID=xxxxxxx /mnt/Data   ext4    defaults        0       0  # internal drive
-	UUID=xxxxxxx /mnt/usb    ntfs    uid=1000,gid=1000,umask=022 0 1
+	UUID=xxxxxxx /mnt/Data   ext4    defaults        0       0        
+
+- untuk ekternal usb drive
+
+::
+
+	UUID=xxxxxxx /mnt/usb    ntfs    uid=1000,gid=1000,umask=022 0 1  
+
+.. Note::
+
+	Jika format storage-nya adalah ntfs, maka install:
+
+	::
+
+		$ sudo apt-get update
+		$ sudo apt-install ntfs-3g
+
+	Jika tidak di-install, maka akan ada issue dengan file permission.  
 
 - Test Fstab
 
@@ -713,14 +774,52 @@ Mencari uid dan gid sebuah user:
 
 	$ id <username>
 
+Menambah user ke grup:
+
+::
+
+	$ sudo usermod -aG <groupname> <username>
+
+- (-a) adalah shortcut dari --append
+- (-G) adalah shortcut dari --groups
+
 
 **Referensi**
 
 - `Linux sysadmin basics: uid and gid`_
 - `Find uid and gid`_
+- `Sudo usermod`_
 
 Umask
 ---------------------------------------------------------------------------------
+
+Umask (user file-creation mode mask) digunakan untuk menentukan file permission
+dari file yang baru dibuat. 
+
+Berikut ini adalah notasi untuk umask:
+
+====== ==========================================
+Bit     File permission
+====== ==========================================
+ 0      read, write, and execute
+ 1      read and write
+ 2      read and execute
+ 3      read only
+ 4      write and execute
+ 5      write only
+ 6      execute only
+ 7      no permissions
+====== ==========================================
+
+Untuk umask=077, pengertiannya adalah:
+
+===== =============== ==========================
+ Bit   Target          File permission
+===== =============== ==========================
+ 0     owner           read, write, and execute
+ 7     group           no permission
+ 7     others          no permission
+===== =============== ==========================
 
 
 **Referensi**
@@ -742,3 +841,5 @@ Umask
 .. _`Linux sysadmin basics: uid and gid`: https://www.redhat.com/sysadmin/user-account-gid-uid
 .. _`What is umask?`: https://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html
 .. _`Find uid and gid`: https://kb.iu.edu/d/adwf
+.. _`Sudo usermod`: https://medium.com/@dhananjay4058/what-does-sudo-usermod-a-g-group-user-do-on-linux-b1ab7ffbba9c
+.. _`Download fonts`: https://github.com/justrajdeep/fonts
