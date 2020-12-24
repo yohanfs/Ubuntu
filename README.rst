@@ -833,9 +833,51 @@ Kapasitas Disk
 
 	df -h
 
+Rsync
+---------------------------------------------------------------------------------
 
+Berguna untuk sinkronisasi file atau folder antara 2 lokasi di internal komputer
+atau ke remote. Rync juga hanya akan mengkopi data yang berbeda dari 2 lokasi
+tersebut sehingga lebih efisien.   
 
+**Install**
 
+::
+
+	$ sudo apt-get install rsync
+
+**Syntax**
+
+::
+
+	Local to local: $ rsync [OPTION} [SRC] [DEST]
+        Local to remote: $ rsync [OPTION] [SRC] [USER@HOST:DEST]
+        Remote to local: $ rsync [OPTION] [USER@HOST:DEST] [DEST]
+
+- OPTION
+   + -a: archive mode
+   + -z: compress
+   + -P: partial/progress
+   + --delete: delete extra file di destination folder (untuk mirror)
+   + -q: quite (non-error messages)
+- SRC: source directory
+- DEST: destination directory
+- USER: Remote username
+- HOST: Remote hostname or IP Address
+
+**Contoh**
+
+::
+
+	$ rsync -a /home/data /mnt/data
+
+::
+
+	$ rsync -a /home/data user@hostname:/mnt/data
+
+**Referensi**
+
+- `Rsync command in linux`_
 
 
 .. Referensi
@@ -854,3 +896,4 @@ Kapasitas Disk
 .. _`Find uid and gid`: https://kb.iu.edu/d/adwf
 .. _`Sudo usermod`: https://medium.com/@dhananjay4058/what-does-sudo-usermod-a-g-group-user-do-on-linux-b1ab7ffbba9c
 .. _`Download fonts`: https://github.com/justrajdeep/fonts
+.. _`Rsync command in linux`: https://linuxize.com/post/how-to-use-rsync-for-local-and-remote-data-transfer-and-synchronization/
