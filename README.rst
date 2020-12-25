@@ -611,7 +611,7 @@ Referensi:
 
 - `automatic mounting drive`_
 
-Mounting Shared Network
+Mounting Shared Drive
 ---------------------------------------------------------------------------------
 
 - Buatlah mount point, misalnya ``/mnt/Data`` 
@@ -648,9 +648,18 @@ Mounting Shared Network
 
 Tambahkan line berikut:
 
+**Owner drive adalah root**
+
 ::
 
 	//192.168.1.120/storage /mnt/Data    cifs credentials=/root/.smbcredentials,file_mode=0777,dir_mode=0777 0 0
+
+**Owner drive adalah user**
+
+::
+
+	//192.168.1.120/storage /mnt/Data    cifs uid=1000,gid=1000,credentials=/root/.smbcredentials,file_mode=0777,dir_mode=0777 0 0
+
 
 - Test Fstab
 
