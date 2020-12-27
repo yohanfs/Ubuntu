@@ -169,57 +169,6 @@ Tambahkan [arch=amd64] sehingga menjadi:
 
 
 
-Networking
-***************************************************************************************************
-
-Samba
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
--  `Install Samba`_
-
-::
-
-       $ sudo apt-get update
-       $ sudo apt-get install samba
-
-- Pilih folder yang akan dishare, misalnya:
-
-::
-
-	/mnt/data
-
-- Aturlah file berikut:
-
-::
-
-	$ sudo vim /etc/samba/smb.conf
-
-Tambahkan *script* berikut pada bagian akhir smb.conf
-
-::
-
-	[namashare]
-	path = /mnt/data
-	writeable = Yes
-	create mask = 0777
-	directory mask = 0777
-	public = no
-
-
-**Referens**
-
--  Akses komputer dalam network: smb://IP-Address/
--  `Referensi: Share a folder in ubuntu`_
--  `Referensi: Setting LAN in ubuntu`_
-
-Edit Host File
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Untuk mapping ip-address server.
-
-::
-
-	sudo vim /etc/hosts
 
 Google Chrome
 ***************************************************************************************************
@@ -887,6 +836,74 @@ tersebut sehingga lebih efisien.
 **Referensi**
 
 - `Rsync command in linux`_
+
+
+Memory
+---------------------------------------------------------------------------------
+
+Untuk melihat status penggunaan memory:
+
+::
+
+	$ vmstat -s
+
+Networking
+---------------------------------------------------------------------------------
+
+Share Folders
+*********************************************************************************
+
+-  `Install Samba`_
+
+::
+
+       $ sudo apt-get update
+       $ sudo apt-get install samba
+
+- Pilih folder yang akan dishare, misalnya:
+
+::
+
+	/mnt/data
+
+- Aturlah file berikut:
+
+::
+
+	$ sudo vim /etc/samba/smb.conf
+
+Tambahkan *script* berikut pada bagian akhir smb.conf
+
+::
+
+	[namashare]
+	path = /mnt/data
+	writeable = Yes
+	create mask = 0777
+	directory mask = 0777
+	public = no
+
+
+**Referensi**
+
+-  Akses komputer dalam network: smb://IP-Address/
+-  `Referensi: Share a folder in ubuntu`_
+-  `Referensi: Setting LAN in ubuntu`_
+
+
+Mapping IP Addresses
+*********************************************************************************
+
+Untuk mapping ip-address:
+
+::
+
+	sudo vim /etc/hosts
+
+
+Cara ini hanya berlaku untuk mesin komputer tersebut. Agar bisa digunakan oleh
+komputer lain dalam network yang sama, perlu menggunakan DNS server. DNS server
+bisa diinstall di Raspberry Pi. 
 
 
 .. Referensi
