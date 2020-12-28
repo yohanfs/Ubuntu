@@ -460,6 +460,7 @@ delete semua dengan nama tertentu   rm \*filename*
 open file dengan default program    start filenamedotextension
 clear terminal                      clear atau CTRL + L
 manual command                      man ls (manual dari command ls)
+view beberapa baris csv data        head contoh.csv
 ================================== =======================================================
 
 Akses Network Drive
