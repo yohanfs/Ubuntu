@@ -906,6 +906,41 @@ Cara ini hanya berlaku untuk mesin komputer tersebut. Agar bisa digunakan oleh
 komputer lain dalam network yang sama, perlu menggunakan DNS server. DNS server
 bisa diinstall di Raspberry Pi. 
 
+Untar
+---------------------------------------------------------------------------------
+
+::
+
+	$ tar -xzf filename.tar.gz
+
+CPU Info
+---------------------------------------------------------------------------------
+
+::
+
+	$ cat /proc/cpuinfo
+
+Kopi ke Clipboard
+---------------------------------------------------------------------------------
+
+**Install**
+
+::
+
+	$ sudo apt-get install xclip
+
+**Kopi pwd**
+
+::
+
+	$ pwd | xclip
+
+**Output**
+
+::
+
+	$ xclip -o 
+
 Issues
 ---------------------------------------------------------------------------------
 
