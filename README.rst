@@ -8,12 +8,6 @@ Ubuntu
 Getting Started
 ---------------------------------------------------------------------------------------------------
 
-Partisi Harddisk
-***************************************************************************************************
-
-- Software: gparted
--  `Membuat partisi di Ubuntu`_
-
 Install Softwares
 ***************************************************************************************************
 
@@ -433,6 +427,35 @@ atau
 
 uuid = *universal unique identifier* 
 
+Cloning Disk
+--------------------------------------------------------------------------------------------------
+
+Cloning disk bisa menggunakan dd command. Disk tujuan harus sama atau lebih
+besar dari disk yang dicloning. Apabila menggunakan disk tujuan yang lebih
+besar, maka nanti kelebihan storagenya akan menjadi *unaloccated space*.
+Selanjutnya *unaloccated space* dapat digabungkan ke disk yang sudah ada dengan
+menggunakan gparted. 
+
+::
+
+    $ dd if=<source-disk> of=<destination-disk> [option}
+
+- if adalah input file
+- of adalah output file
+- option misalnya status=progress untuk melihat proses pengkopian data
+
+Contoh:
+
+::
+
+    $ dd if=/dev/sda of=/dev/sdb status=progress
+
+**Referensi**
+
+`How to clone your linux harddrive with dd`_
+
+    
+
 Basic Command
 --------------------------------------------------------------------------------------------------
 
@@ -461,6 +484,7 @@ open file dengan default program    start filenamedotextension
 clear terminal                      clear atau CTRL + L
 manual command                      man ls (manual dari command ls)
 view beberapa baris csv data        head contoh.csv
+list disk                           lsblk
 ================================== =======================================================
 
 Akses Network Drive
@@ -941,6 +965,8 @@ Kopi ke Clipboard
 
 	$ xclip -o 
 
+
+
 Issues
 ---------------------------------------------------------------------------------
 
@@ -969,3 +995,4 @@ Issues
 .. _`Sudo usermod`: https://medium.com/@dhananjay4058/what-does-sudo-usermod-a-g-group-user-do-on-linux-b1ab7ffbba9c
 .. _`Download fonts`: https://github.com/justrajdeep/fonts
 .. _`Rsync command in linux`: https://linuxize.com/post/how-to-use-rsync-for-local-and-remote-data-transfer-and-synchronization/
+.. _`How to clone your linux harddrive with dd`: https://snapshooter.io/blog/how-to-clone-your-linux-harddrive-with-dd
