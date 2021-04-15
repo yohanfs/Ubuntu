@@ -329,6 +329,12 @@ font-nya.
 
 - `Download fonts`_
 
+SoftMaker FreeOffice
+*********************************************************************************
+
+Alternatif untuk Microsoft Office. Download di `www.freeoffice.com <https://www.freeoffice.com/en/>`_. 
+
+
 Hieararki Filesystem
 --------------------------------------------------------------------------------------------------
 
