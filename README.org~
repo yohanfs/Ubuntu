@@ -1,0 +1,1143 @@
+* Ubuntu
+  :PROPERTIES:
+  :CUSTOM_ID: ubuntu
+  :END:
+
+- Penulis :: Yohan Sidik
+
+Daftar Isi
+
+** Getting Started
+   :PROPERTIES:
+   :CUSTOM_ID: getting-started
+   :END:
+
+*** Install Softwares
+    :PROPERTIES:
+    :CUSTOM_ID: install-softwares
+    :END:
+
+- snap
+
+#+BEGIN_EXAMPLE
+    $ sudo snap install namasoftware
+#+END_EXAMPLE
+
+- apt
+
+#+BEGIN_EXAMPLE
+    $ sudo apt-get install namasoftware
+#+END_EXAMPLE
+
+- deb
+
+#+BEGIN_EXAMPLE
+    $ sudo dpkg -i $DEB
+#+END_EXAMPLE
+
+$DEB adalah path ke instalasi file (deb).
+
+*** Uninstall Softwares
+    :PROPERTIES:
+    :CUSTOM_ID: uninstall-softwares
+    :END:
+
+*apt*
+
+#+BEGIN_EXAMPLE
+    $ sudo apt-get purge <program name>
+#+END_EXAMPLE
+
+*snap*
+
+#+BEGIN_EXAMPLE
+    $ sudo snap remove <software name>
+#+END_EXAMPLE
+
+*** Installed Softwares
+    :PROPERTIES:
+    :CUSTOM_ID: installed-softwares
+    :END:
+
+*apt*
+
+#+BEGIN_EXAMPLE
+    $ apt list --installed
+#+END_EXAMPLE
+
+*snap*
+
+#+BEGIN_EXAMPLE
+    $ snap list
+#+END_EXAMPLE
+
+*** Vim
+    :PROPERTIES:
+    :CUSTOM_ID: vim
+    :END:
+
+- install: sudo apt-get install vim
+- [[https://github.com/yohanfs/.vim][vimrc]]
+
+*** Git
+    :PROPERTIES:
+    :CUSTOM_ID: git
+    :END:
+
+- Command:
+
+#+BEGIN_EXAMPLE
+    $ sudo apt-get update
+    $ sudo apt-get install git
+    $ git --version
+#+END_EXAMPLE
+
+- [[https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-18-04][Install]]
+- [[https://wiki.paparazziuav.org/wiki/Github_manual_for_Ubuntu][SSH]]
+
+*** Pandoc
+    :PROPERTIES:
+    :CUSTOM_ID: pandoc
+    :END:
+
+- Install
+
+  - [[https://github.com/jgm/pandoc/releases/tag/2.9.2.1][download
+    installer]]
+  - Command:
+
+  #+BEGIN_EXAMPLE
+      $ sudo dpkg -i $DEB
+  #+END_EXAMPLE
+
+- $DEB adalah path ke instalasi file (deb)
+- [[https://pandoc.org/installing.html][Referensi]]
+
+*** Python
+    :PROPERTIES:
+    :CUSTOM_ID: python
+    :END:
+
+- Sudah terinstall secara default
+- Cek di terminal: python3 ---version
+- Install pip: sudo apt-get -y install python3-pip
+
+*** Inkscape
+    :PROPERTIES:
+    :CUSTOM_ID: inkscape
+    :END:
+
+- [[https://inkscape.org/release/][Web: inkscape]]
+- Go to the “Ubuntu Software” atau
+
+#+BEGIN_EXAMPLE
+    $ sudo add-apt-repository ppa:inkscape.dev/stable
+    $ sudo apt update
+    $ sudo apt install inkscape
+#+END_EXAMPLE
+
+*** Make
+    :PROPERTIES:
+    :CUSTOM_ID: make
+    :END:
+
+- Install: sudo apt-get install make
+
+*** Markdown Editor (ReText)
+    :PROPERTIES:
+    :CUSTOM_ID: markdown-editor-retext
+    :END:
+
+- Command: sudo apt-get install -y retext
+- [[https://www.hiroom2.com/2017/05/16/ubuntu-16-04-write-markdown-with-retext/][Referensi]]
+
+*** Latex
+    :PROPERTIES:
+    :CUSTOM_ID: latex-1
+    :END:
+
+- [[https://www.tecrobust.com/insta-latex-ubuntu-texmaker-linux-ubuntu-latest/][Texlive]]
+
+#+BEGIN_EXAMPLE
+    $ sudo apt-get install texlive-full
+#+END_EXAMPLE
+
+- [[https://miktex.org/download][MiKTeX]]
+
+Isu saat menjalankan =sudo apt-get update=:
+
+#+BEGIN_QUOTE
+  Skipping acquire of configured file 'universe/binary-i386/Packages'...
+#+END_QUOTE
+
+Ini terjadi karena MiKTeX untuk Linux tidak support arsitektur i386.
+Solusinya adalah dengan mengedit:
+
+#+BEGIN_EXAMPLE
+    $ sudo vim /etc/apt/sources.list.d/miktex.list
+#+END_EXAMPLE
+
+Tambahkan [arch=amd64] sehingga menjadi:
+
+#+BEGIN_EXAMPLE
+    $ deb [arch=amd64] http://miktex.org/download/ubuntu focal universe
+#+END_EXAMPLE
+
+*** Google Chrome
+    :PROPERTIES:
+    :CUSTOM_ID: google-chrome
+    :END:
+
+- Google Chrome tidak tersedia di Ubuntu Software
+- [[https://itsfoss.com/install-chrome-ubuntu/][Install Google Chrome]]
+
+#+BEGIN_EXAMPLE
+    $ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    $ sudo dpkg -i google-chrome-stable_current_amd64.deb
+#+END_EXAMPLE
+
+*** Terminal PDF
+    :PROPERTIES:
+    :CUSTOM_ID: terminal-pdf
+    :END:
+
+- [[http://manpages.ubuntu.com/manpages/bionic/man1/pdfunite.1.html][merge
+  pdf: pdfunite]]
+- Example: pdfunite sample1.pdf sample2.pdf sample.pdf
+- [[http://qpdf.sourceforge.net/][extract pdf: qpdf]]
+- [[https://www.pdflabs.com/docs/pdftk-cli-examples/][pdftk]]
+
+*** Tree
+    :PROPERTIES:
+    :CUSTOM_ID: tree
+    :END:
+
+/Directory tree/ bisa diprint di terminal dengan tree command. Command
+tersebut adalah built-in di Windows. Sedangkan di ubuntu harus diinstall
+terlebih dahulu:
+
+#+BEGIN_EXAMPLE
+    sudo apt-get install tree
+#+END_EXAMPLE
+
+Selanjutnya bisa digunakan dengan mengetikkan tree command sebagai
+berikut:
+
+#+BEGIN_EXAMPLE
+    tree
+#+END_EXAMPLE
+
+Hasilnya:
+
+[[file:images/tree.png]]
+
+*** reStructuredText
+    :PROPERTIES:
+    :CUSTOM_ID: restructuredtext
+    :END:
+
+- [[https://pypi.org/project/rst2html/][rst2html]] : sudo pip3 install
+  rst2html
+- [[https://pypi.org/project/rst2pdf/][rst2pdf]] : sudo pip3 install
+  rst2pdf
+
+*** Shotwell
+    :PROPERTIES:
+    :CUSTOM_ID: shotwell
+    :END:
+
+Shotwell adalah image viewer dan editor.
+
+*** Inotifywait
+    :PROPERTIES:
+    :CUSTOM_ID: inotifywait
+    :END:
+
+Inotifywait berguna untuk memantau aktivitas sebuah folder atau file.
+
+#+BEGIN_EXAMPLE
+    $ sudo apt-get install inotify-tools
+#+END_EXAMPLE
+
+*** Zathura
+    :PROPERTIES:
+    :CUSTOM_ID: zathura
+    :END:
+
+Simple pdf viewer.
+
+#+BEGIN_EXAMPLE
+    $ sudo apt-get install zathura 
+#+END_EXAMPLE
+
+*** Install Printer
+    :PROPERTIES:
+    :CUSTOM_ID: install-printer
+    :END:
+
+**** Canon
+     :PROPERTIES:
+     :CUSTOM_ID: canon
+     :END:
+
+Printer canon diinstall di ubuntu dengan cara sebagai berikut:
+
+- Tambahkan repositori
+
+#+BEGIN_EXAMPLE
+    sudo add-apt-repository ppa:michael-gruz/canon
+    sudo apt-get update
+#+END_EXAMPLE
+
+- Install printer sesuai dengan versinya. Contohnya adalah printer
+  MP540.
+
+#+BEGIN_EXAMPLE
+    sudo apt-get install cnijfilter-mp540series
+#+END_EXAMPLE
+
+*Referensi*
+
+- [[https://askubuntu.com/questions/75014/how-can-i-install-a-canon-printer-or-scanner-driver][Askubuntu:
+  Canon Printer]]
+
+*** Terminal Multiplexer
+    :PROPERTIES:
+    :CUSTOM_ID: terminal-multiplexer
+    :END:
+
+Tmux adalah /terminal multiplexer/ yang memungkinkan untuk membuka
+banyak tab dalam satu terminal.
+
+*Install*
+
+#+BEGIN_EXAMPLE
+    sudo apt-get install tmux
+#+END_EXAMPLE
+
+*Run*
+
+- open terminal, kemudian ketik: tmux
+- split terminal:
+
+  - horizontal: =Ctrl+b+"=
+  - vertikal: =Ctrl+b+%=
+
+- berpindah antar terminal:
+
+  - next terminal: =Ctrl+b+o=
+  - previous terminal: =Ctrl+b+;=
+
+- menutup current terminal: =Ctrl+b+x=
+- buka last session: open normal terminal, kemudian ketik: =tmux attach=
+- kembali normal terminal: =Ctrl+b+d=
+- list terminal: =tmux list-sessions=
+
+*Referensi*
+
+- [[https://github.com/tmux/tmux/wiki][github: tmux]]
+- [[https://linuxize.com/post/getting-started-with-tmux][linuxize:
+  getting started with tmux]]
+
+*** Only Office
+    :PROPERTIES:
+    :CUSTOM_ID: only-office
+    :END:
+
+Alternatif untuk Microsoft Office.
+
+- Install via Snap (setting juga file permission di snap page)
+- Untuk menambahkan font, simpan .ttf format di:
+
+#+BEGIN_EXAMPLE
+    /usr/share/fonts/truetype
+#+END_EXAMPLE
+
+Buatlahlah folder baru dengan nama onlyoffice pada path di atas untuk
+menyimpan font-nya.
+
+- [[https://github.com/justrajdeep/fonts][Download fonts]]
+
+*** SoftMaker FreeOffice
+    :PROPERTIES:
+    :CUSTOM_ID: softmaker-freeoffice
+    :END:
+
+Alternatif untuk Microsoft Office. Download di
+[[https://www.freeoffice.com/en/][www.freeoffice.com]].
+
+** Hieararki Filesystem
+   :PROPERTIES:
+   :CUSTOM_ID: hieararki-filesystem
+   :END:
+
+Sistem folder di ubuntu dan deskripsinya:
+
+| Direktori   | Deskripsi                                         |
+|-------------+---------------------------------------------------|
+| /           | #+BEGIN_QUOTE                                     |
+|             |   root directory                                  |
+|             | #+END_QUOTE                                       |
+| /bin        | #+BEGIN_QUOTE                                     |
+|             |   command binaries misalnya: cat, ls, cp          |
+|             | #+END_QUOTE                                       |
+| /boot       | #+BEGIN_QUOTE                                     |
+|             |   boot loader                                     |
+|             | #+END_QUOTE                                       |
+| /dev        | #+BEGIN_QUOTE                                     |
+|             |   device files, misalnya /dev/null, /dev/sda1     |
+|             | #+END_QUOTE                                       |
+| /etc        | #+BEGIN_QUOTE                                     |
+|             |   file konfigurasi (text based)                   |
+|             | #+END_QUOTE                                       |
+| /home       | #+BEGIN_QUOTE                                     |
+|             |   home direktori                                  |
+|             | #+END_QUOTE                                       |
+| /lib        | #+BEGIN_QUOTE                                     |
+|             |   library untuk /bin dan /sbin                    |
+|             | #+END_QUOTE                                       |
+| /media      | #+BEGIN_QUOTE                                     |
+|             |   mount point untuk removable media (usb drive)   |
+|             | #+END_QUOTE                                       |
+| /mnt        | #+BEGIN_QUOTE                                     |
+|             |   mounting drive                                  |
+|             | #+END_QUOTE                                       |
+| /proc       | #+BEGIN_QUOTE                                     |
+|             |   vitual filesystem                               |
+|             | #+END_QUOTE                                       |
+| /root       | #+BEGIN_QUOTE                                     |
+|             |   home directory untuk root user                  |
+|             | #+END_QUOTE                                       |
+| /run        | #+BEGIN_QUOTE                                     |
+|             |   run-time variable data                          |
+|             | #+END_QUOTE                                       |
+| /sbin       | #+BEGIN_QUOTE                                     |
+|             |   system binaries, misalnya fsck, init, route     |
+|             | #+END_QUOTE                                       |
+| /srv        | #+BEGIN_QUOTE                                     |
+|             |   serve folder. ex untuk ftp, rsync, www, cvs     |
+|             | #+END_QUOTE                                       |
+| /tmp        | #+BEGIN_QUOTE                                     |
+|             |   temporary space                                 |
+|             | #+END_QUOTE                                       |
+| /usr        | #+BEGIN_QUOTE                                     |
+|             |   programs, libraries, dan dokumentasi            |
+|             | #+END_QUOTE                                       |
+| /var        | #+BEGIN_QUOTE                                     |
+|             |   tempat penyimpanan untuk semua variable files   |
+|             | #+END_QUOTE                                       |
+
+*Referensi*
+
+- [[https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard][Wikipedia -
+  Fileystem Hierarchy Standard]]
+- Tldp - General Overview of The Linux File System
+- [[https://www.nixtutor.com/linux/understanding-the-linux-directory-layout/][Understanding
+  the linux directory layout]]
+
+** Bootable Flash Drive
+   :PROPERTIES:
+   :CUSTOM_ID: bootable-flash-drive
+   :END:
+
+Berikut ini adalah langkah-langkah untuk membuat bootable usb. Bootable
+usb ini diperuntukkan untuk menginstall sebuah operating system (OS)
+misalnya ubuntu dan windows melalui usb.
+
+- Colokkan flaskdisk (usb drive) ke usb port di komputer.
+- Buka *Startup Disk Creator*.
+- Klik other untuk memilih ISO file.
+- Pilih flaskdisk dan kemudian klik *Make Startup Disk*.
+
+[[file:images/bootable.png]]
+
+*Referensi*
+
+- [[https://askubuntu.com/questions/876058/bootable-flash-drive-for-ubuntu][Bootable
+  flash drive for ubuntu]]
+
+** Partisi Hardisk
+   :PROPERTIES:
+   :CUSTOM_ID: partisi-hardisk
+   :END:
+
+*Gparted*
+
+Partisi hardisk di Ubuntu tidak bisa dilakukan ketika Ubuntu sedang
+dioperasikan. Partisi dapat dilakukan dengan cara menjalankan instalasi
+ubuntu dari usb kemudian pilih *live ubuntu*. Selanjutnya, partisi dapat
+dilakukan dengan program yang bernama Gparted.
+
+Contoh hardisk sebelum partisi adalah:
+
+[[file:images/sebelumpartisi.png]]
+
+Dengan memilih menu *Partition*, maka hasil partisinya adalah sbb:
+
+[[file:images/setelahpartisi.png]]
+
+*Daftar Partisi*
+
+#+BEGIN_EXAMPLE
+    $ ls -l /dev/disk/by-label
+#+END_EXAMPLE
+
+atau
+
+#+BEGIN_EXAMPLE
+    $ ls -l /dev/disk/by-id
+#+END_EXAMPLE
+
+atau
+
+:
+
+#+BEGIN_EXAMPLE
+    $ ls -l /dev/disk/by-uuid
+#+END_EXAMPLE
+
+uuid = /universal unique identifier/
+
+** Cloning Disk
+   :PROPERTIES:
+   :CUSTOM_ID: cloning-disk
+   :END:
+
+Cloning disk bisa menggunakan dd command. Disk tujuan harus sama atau
+lebih besar dari disk yang dicloning. Apabila menggunakan disk tujuan
+yang lebih besar, maka nanti kelebihan storagenya akan menjadi
+/unaloccated space/. Selanjutnya /unaloccated space/ dapat digabungkan
+ke disk yang sudah ada dengan menggunakan gparted.
+
+#+BEGIN_EXAMPLE
+    $ dd if=<source-disk> of=<destination-disk> [option}
+#+END_EXAMPLE
+
+- if adalah input file
+- of adalah output file
+- option misalnya status=progress untuk melihat proses pengkopian data
+
+Contoh:
+
+#+BEGIN_EXAMPLE
+    $ dd if=/dev/sda of=/dev/sdb status=progress
+#+END_EXAMPLE
+
+*Referensi*
+
+[[https://snapshooter.io/blog/how-to-clone-your-linux-harddrive-with-dd][How
+to clone your linux harddrive with dd]]
+
+** Basic Command
+   :PROPERTIES:
+   :CUSTOM_ID: basic-command
+   :END:
+
+Berikut ini adalah basic command ubuntu yang sering saya gunakan:
+
+| Task                                | Command                                                 |
+|-------------------------------------+---------------------------------------------------------|
+| update ubuntu package               | #+BEGIN_QUOTE                                           |
+|                                     |   sudo apt-get update                                   |
+|                                     | #+END_QUOTE                                             |
+| install package                     | #+BEGIN_QUOTE                                           |
+|                                     |   sudo apt-get install <Package>                        |
+|                                     | #+END_QUOTE                                             |
+| menggunakan super user              | #+BEGIN_QUOTE                                           |
+|                                     |   sudo su                                               |
+|                                     | #+END_QUOTE                                             |
+| open terminal                       | #+BEGIN_QUOTE                                           |
+|                                     |   CTRL + ALT + T                                        |
+|                                     | #+END_QUOTE                                             |
+| membuat file baru                   | #+BEGIN_QUOTE                                           |
+|                                     |   touch filenamedotextension (contoh touch README.md)   |
+|                                     | #+END_QUOTE                                             |
+| membuat folder baru                 | #+BEGIN_QUOTE                                           |
+|                                     |   mkdir namafolder                                      |
+|                                     | #+END_QUOTE                                             |
+| berpindah ke subfolder              | #+BEGIN_QUOTE                                           |
+|                                     |   cd namafolder                                         |
+|                                     | #+END_QUOTE                                             |
+| memindah sebuah file                | #+BEGIN_QUOTE                                           |
+|                                     |   mv asalFile tujuanFile                                |
+|                                     | #+END_QUOTE                                             |
+| exit dari terminal                  | #+BEGIN_QUOTE                                           |
+|                                     |   exit                                                  |
+|                                     | #+END_QUOTE                                             |
+| rename file                         | #+BEGIN_QUOTE                                           |
+|                                     |   mv file.ext1 file.ext2                                |
+|                                     | #+END_QUOTE                                             |
+| install deb packages                | #+BEGIN_QUOTE                                           |
+|                                     |   sudo dpkg -i filenamedotdeb                           |
+|                                     | #+END_QUOTE                                             |
+| berpindah ke path sebelumnya        | #+BEGIN_QUOTE                                           |
+|                                     |   cd ..                                                 |
+|                                     | #+END_QUOTE                                             |
+| menampilkan isi file                | #+BEGIN_QUOTE                                           |
+|                                     |   cp filenamedotextension                               |
+|                                     | #+END_QUOTE                                             |
+| menampilkan isi direktori           | #+BEGIN_QUOTE                                           |
+|                                     |   ls atau ls -a (memunculkan hidden files)              |
+|                                     | #+END_QUOTE                                             |
+| delete file                         | #+BEGIN_QUOTE                                           |
+|                                     |   rm filenamedotextension                               |
+|                                     | #+END_QUOTE                                             |
+| delete semua dengan nama tertentu   | #+BEGIN_QUOTE                                           |
+|                                     |   rm *filename*                                         |
+|                                     | #+END_QUOTE                                             |
+| open file dengan default program    | #+BEGIN_QUOTE                                           |
+|                                     |   start filenamedotextension                            |
+|                                     | #+END_QUOTE                                             |
+| clear terminal                      | #+BEGIN_QUOTE                                           |
+|                                     |   clear atau CTRL + L                                   |
+|                                     | #+END_QUOTE                                             |
+| manual command                      | #+BEGIN_QUOTE                                           |
+|                                     |   man ls (manual dari command ls)                       |
+|                                     | #+END_QUOTE                                             |
+| view beberapa baris csv data        | #+BEGIN_QUOTE                                           |
+|                                     |   head contoh.csv                                       |
+|                                     | #+END_QUOTE                                             |
+| list disk                           | #+BEGIN_QUOTE                                           |
+|                                     |   lsblk                                                 |
+|                                     | #+END_QUOTE                                             |
+
+** Akses Network Drive
+   :PROPERTIES:
+   :CUSTOM_ID: akses-network-drive
+   :END:
+
+Ada 2 metode untuk akses network drive di ubuntu.
+
+1. GUI (file explorer)
+
+   - Install samba
+   - Other Locations >> Connect to Server >> Enter server address
+   - Server address format= [[smb://ip-address]]
+
+2. Terminal
+
+   - Install smbclient
+   - /Command/: smbclient -L=ip-address
+
+Untuk cara 2, masih ada isu. Setelah daftar shared hardisk muncul,
+kemudian ketik smbclient //ip-address/L, maka akan muncul pesan:
+
+#+BEGIN_EXAMPLE
+    tree connect failed: NT_STATUS_REQUEST_NOT_ACCEPTED
+#+END_EXAMPLE
+
+** Mounting Drive
+   :PROPERTIES:
+   :CUSTOM_ID: mounting-drive
+   :END:
+
+*Manual*
+
+Buat sebuah folder sebagai /mount point/, misalnya =/mnt/Data=.
+
+#+BEGIN_EXAMPLE
+    $ sudo mkdir /mnt/Data
+    $ sudo mount /dev/sdb6 /mnt/Data
+#+END_EXAMPLE
+
+Sekarang data bisa diakses di =/mnt/Data=.
+
+Alamat /dev/sdb6, dapat dilihat dari:
+
+#+BEGIN_EXAMPLE
+    $ lsblk
+#+END_EXAMPLE
+
+*Auto Mounting*
+
+File yang harus diedit adalah =/etc/fstab=. Sebelumnya cari terlebih
+dahulu UUID dari drive yang akan dimounting.
+
+#+BEGIN_EXAMPLE
+    $ ls -al /dev/disk/by-uuid
+#+END_EXAMPLE
+
+Kemudian editlah =/etc/fstab=, misalnya:
+
+- untuk internal drive
+
+#+BEGIN_EXAMPLE
+    UUID=xxxxxxx /mnt/Data   ext4    defaults        0       0        
+#+END_EXAMPLE
+
+- untuk ekternal usb drive
+
+#+BEGIN_EXAMPLE
+    UUID=xxxxxxx /mnt/usb    ntfs    uid=1000,gid=1000,umask=022 0 1  
+#+END_EXAMPLE
+
+Note
+
+Jika format storage-nya adalah ntfs, maka install:
+
+#+BEGIN_EXAMPLE
+    $ sudo apt-get update
+    $ sudo apt-install ntfs-3g
+#+END_EXAMPLE
+
+Jika tidak di-install, maka akan ada issue dengan file permission.
+
+- Test Fstab
+
+Sebelum rebooting, cek terlebih dengan cara:
+
+#+BEGIN_EXAMPLE
+    sudo mount -a
+#+END_EXAMPLE
+
+- Unmounting drive dengan umount
+
+#+BEGIN_EXAMPLE
+    sudo umount /mnt/Data
+#+END_EXAMPLE
+
+Referensi:
+
+- [[https://confluence.jaytaala.com/display/TKB/Mount+drive+in+linux+and+set+auto-mount+at+boot][automatic
+  mounting drive]]
+
+** Mounting Shared Drive
+   :PROPERTIES:
+   :CUSTOM_ID: mounting-shared-drive
+   :END:
+
+- Buatlah mount point, misalnya =/mnt/Data=
+
+#+BEGIN_EXAMPLE
+    $ sudo mkdir /mnt/Data
+#+END_EXAMPLE
+
+- Install cifs-utils
+
+#+BEGIN_EXAMPLE
+    $ sudo apt install cifs-utils
+#+END_EXAMPLE
+
+- Buatlah sebuah file =/root/.smbcredentials= dengan isi:
+
+#+BEGIN_EXAMPLE
+    username=user
+    password=pass
+#+END_EXAMPLE
+
+- Ganti permission agar hanya root yang bisa baca smbcredentials
+
+#+BEGIN_EXAMPLE
+    $ sudo chmod 700 /root/.smbcredentials
+#+END_EXAMPLE
+
+- Edit =/etc/fstab=
+
+#+BEGIN_EXAMPLE
+    $ sudo vim /etc/fstab
+#+END_EXAMPLE
+
+Tambahkan line berikut:
+
+*Owner drive adalah root*
+
+#+BEGIN_EXAMPLE
+    //192.168.1.120/storage /mnt/Data    cifs credentials=/root/.smbcredentials,file_mode=0777,dir_mode=0777 0 0
+#+END_EXAMPLE
+
+*Owner drive adalah user*
+
+#+BEGIN_EXAMPLE
+    //192.168.1.120/storage /mnt/Data    cifs uid=1000,gid=1000,credentials=/root/.smbcredentials,file_mode=0777,dir_mode=0777 0 0
+#+END_EXAMPLE
+
+- Test Fstab
+
+Sebelum rebooting, cek terlebih dengan cara:
+
+#+BEGIN_EXAMPLE
+    $ sudo mount -a
+#+END_EXAMPLE
+
+Referensi:
+
+- [[https://linuxize.com/post/how-to-mount-cifs-windows-share-on-linux/][Mount
+  a network shared drive]]
+
+** Change Permission
+   :PROPERTIES:
+   :CUSTOM_ID: change-permission
+   :END:
+
+Untuk melihat permission dari file atau folder:
+
+#+BEGIN_EXAMPLE
+    $ ls -l 
+#+END_EXAMPLE
+
+atau dengan ditambah opsi *-t* apabila file ingin diurutkan berdasarkan
+waktu.
+
+#+BEGIN_EXAMPLE
+    $ ls -lt
+#+END_EXAMPLE
+
+Misalnya =ls -lt= diterapkan pada folder demo, hasilnya adalah:
+
+[[file:images/seepermission.png]]
+
+Pada gambar di atas ada nama =fajar fajar= yang secara berurutan. Itu
+maksudnya adalah nama user dan nama grup. Selanjutnya ada kode berikut:
+
+#+BEGIN_EXAMPLE
+    -rw-rw-r--
+#+END_EXAMPLE
+
+dan
+
+#+BEGIN_EXAMPLE
+    drwxrwxr-x
+#+END_EXAMPLE
+
+Tanda (-) di awal kode tersebut menandakan itu adalah sebuah file.
+Sedangkan (d) menandakan sebuah direktori. Kemudian rwx adalah kode
+untuk:
+
+- r=read
+- w=write
+- x=executable
+
+Kode rwx di atas bisa dinyatakan dengan huruf seperti contoh di atas
+atau dengan huruf sebagai berikut:
+
+- r=4
+- w=2
+- x=1
+
+Kode =-rw-rw-r--=, dapat dibaca sebagai berikut:
+
+| Tipe            | user            | grup            | other           |
+|-----------------+-----------------+-----------------+-----------------|
+| #+BEGIN_QUOTE   | #+BEGIN_QUOTE   | #+BEGIN_QUOTE   | #+BEGIN_QUOTE   |
+|                 |   rw-           |   rw-           |   r--           |
+|   -             | #+END_QUOTE     | #+END_QUOTE     | #+END_QUOTE     |
+| #+END_QUOTE     |                 |                 |                 |
+| File            | #+BEGIN_QUOTE   | #+BEGIN_QUOTE   | #+BEGIN_QUOTE   |
+|                 |   6             |   6             |   4             |
+|                 | #+END_QUOTE     | #+END_QUOTE     | #+END_QUOTE     |
+
+Jadi apabila ingin mengubah permission dari sebuah file atau folder,
+bisa menggunakan /command/ berikut:
+
+#+BEGIN_EXAMPLE
+    sudo chmod 664 namaFile.extension
+#+END_EXAMPLE
+
+- [[https://opensource.com/article/19/6/understanding-linux-permissions][change
+  permission]]
+
+** Change Password
+   :PROPERTIES:
+   :CUSTOM_ID: change-password
+   :END:
+
+Ganti password:
+
+#+BEGIN_EXAMPLE
+    $ passwd
+#+END_EXAMPLE
+
+Ganti password root user:
+
+#+BEGIN_EXAMPLE
+    $ sudo passwd
+#+END_EXAMPLE
+
+** UID dan GID
+   :PROPERTIES:
+   :CUSTOM_ID: uid-dan-gid
+   :END:
+
+Mencari uid user:
+
+#+BEGIN_EXAMPLE
+    $ id -u <username>
+#+END_EXAMPLE
+
+Mencari gid:
+
+#+BEGIN_EXAMPLE
+    $ id -g <username>
+#+END_EXAMPLE
+
+Mencari semua grup dari seorang user:
+
+#+BEGIN_EXAMPLE
+    $ id -G <username>
+#+END_EXAMPLE
+
+Mencari uid dan gid sebuah user:
+
+#+BEGIN_EXAMPLE
+    $ id <username>
+#+END_EXAMPLE
+
+Menambah user ke grup:
+
+#+BEGIN_EXAMPLE
+    $ sudo usermod -aG <groupname> <username>
+#+END_EXAMPLE
+
+- (-a) adalah shortcut dari --append
+- (-G) adalah shortcut dari --groups
+
+*Referensi*
+
+- [[https://www.redhat.com/sysadmin/user-account-gid-uid][Linux sysadmin
+  basics: uid and gid]]
+- [[https://kb.iu.edu/d/adwf][Find uid and gid]]
+- [[https://medium.com/@dhananjay4058/what-does-sudo-usermod-a-g-group-user-do-on-linux-b1ab7ffbba9c][Sudo
+  usermod]]
+
+** Umask
+   :PROPERTIES:
+   :CUSTOM_ID: umask
+   :END:
+
+Umask (user file-creation mode mask) digunakan untuk menentukan file
+permission dari file yang baru dibuat.
+
+Berikut ini adalah notasi untuk umask:
+
+| Bit             | File permission              |
+|-----------------+------------------------------|
+| #+BEGIN_QUOTE   | #+BEGIN_QUOTE                |
+|   0             |   read, write, and execute   |
+| #+END_QUOTE     | #+END_QUOTE                  |
+| #+BEGIN_QUOTE   | #+BEGIN_QUOTE                |
+|   1             |   read and write             |
+| #+END_QUOTE     | #+END_QUOTE                  |
+| #+BEGIN_QUOTE   | #+BEGIN_QUOTE                |
+|   2             |   read and execute           |
+| #+END_QUOTE     | #+END_QUOTE                  |
+| #+BEGIN_QUOTE   | #+BEGIN_QUOTE                |
+|   3             |   read only                  |
+| #+END_QUOTE     | #+END_QUOTE                  |
+| #+BEGIN_QUOTE   | #+BEGIN_QUOTE                |
+|   4             |   write and execute          |
+| #+END_QUOTE     | #+END_QUOTE                  |
+| #+BEGIN_QUOTE   | #+BEGIN_QUOTE                |
+|   5             |   write only                 |
+| #+END_QUOTE     | #+END_QUOTE                  |
+| #+BEGIN_QUOTE   | #+BEGIN_QUOTE                |
+|   6             |   execute only               |
+| #+END_QUOTE     | #+END_QUOTE                  |
+| #+BEGIN_QUOTE   | #+BEGIN_QUOTE                |
+|   7             |   no permissions             |
+| #+END_QUOTE     | #+END_QUOTE                  |
+
+Untuk umask=077, pengertiannya adalah:
+
+| Bit             | Target          | File permission              |
+|-----------------+-----------------+------------------------------|
+| #+BEGIN_QUOTE   | #+BEGIN_QUOTE   | #+BEGIN_QUOTE                |
+|   0             |   owner         |   read, write, and execute   |
+| #+END_QUOTE     | #+END_QUOTE     | #+END_QUOTE                  |
+| #+BEGIN_QUOTE   | #+BEGIN_QUOTE   | #+BEGIN_QUOTE                |
+|   7             |   group         |   no permission              |
+| #+END_QUOTE     | #+END_QUOTE     | #+END_QUOTE                  |
+| #+BEGIN_QUOTE   | #+BEGIN_QUOTE   | #+BEGIN_QUOTE                |
+|   7             |   others        |   no permission              |
+| #+END_QUOTE     | #+END_QUOTE     | #+END_QUOTE                  |
+
+*Referensi*
+
+- [[https://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html][What
+  is umask?]]
+
+** Kapasitas Disk
+   :PROPERTIES:
+   :CUSTOM_ID: kapasitas-disk
+   :END:
+
+#+BEGIN_EXAMPLE
+    df -h
+#+END_EXAMPLE
+
+** Rsync
+   :PROPERTIES:
+   :CUSTOM_ID: rsync
+   :END:
+
+Berguna untuk sinkronisasi file atau folder antara 2 lokasi di internal
+komputer atau ke remote. Rync juga hanya akan mengkopi data yang berbeda
+dari 2 lokasi tersebut sehingga lebih efisien.
+
+*Install*
+
+#+BEGIN_EXAMPLE
+    $ sudo apt-get install rsync
+#+END_EXAMPLE
+
+*Syntax*
+
+#+BEGIN_EXAMPLE
+    Local to local: $ rsync [OPTION} [SRC] [DEST]
+        Local to remote: $ rsync [OPTION] [SRC] [USER@HOST:DEST]
+        Remote to local: $ rsync [OPTION] [USER@HOST:DEST] [DEST]
+#+END_EXAMPLE
+
+- - OPTION :: 
+
+    - -a: archive mode
+    - -z: compress
+    - -P: partial/progress
+    - --delete: delete extra file di destination folder (untuk mirror)
+    - -q: quite (non-error messages)
+
+- SRC: source directory
+- DEST: destination directory
+- USER: Remote username
+- HOST: Remote hostname or IP Address
+
+*Contoh*
+
+#+BEGIN_EXAMPLE
+    $ rsync -a /home/data /mnt/data
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+    $ rsync -a /home/data user@hostname:/mnt/data
+#+END_EXAMPLE
+
+*Referensi*
+
+- [[https://linuxize.com/post/how-to-use-rsync-for-local-and-remote-data-transfer-and-synchronization/][Rsync
+  command in linux]]
+
+** Memory
+   :PROPERTIES:
+   :CUSTOM_ID: memory
+   :END:
+
+Untuk melihat status penggunaan memory:
+
+#+BEGIN_EXAMPLE
+    $ vmstat -s
+#+END_EXAMPLE
+
+** Networking
+   :PROPERTIES:
+   :CUSTOM_ID: networking
+   :END:
+
+*** Share Folders
+    :PROPERTIES:
+    :CUSTOM_ID: share-folders
+    :END:
+
+- [[https://ubuntu.com/tutorials/install-and-configure-samba#2-installing-samba][Install
+  Samba]]
+
+#+BEGIN_EXAMPLE
+    $ sudo apt-get update
+    $ sudo apt-get install samba
+#+END_EXAMPLE
+
+- Pilih folder yang akan dishare, misalnya:
+
+#+BEGIN_EXAMPLE
+    /mnt/data
+#+END_EXAMPLE
+
+- Aturlah file berikut:
+
+#+BEGIN_EXAMPLE
+    $ sudo vim /etc/samba/smb.conf
+#+END_EXAMPLE
+
+Tambahkan /script/ berikut pada bagian akhir smb.conf
+
+#+BEGIN_EXAMPLE
+    [namashare]
+    path = /mnt/data
+    writeable = Yes
+    create mask = 0777
+    directory mask = 0777
+    public = no
+#+END_EXAMPLE
+
+*Referensi*
+
+- Akses komputer dalam network: [[smb://IP-Address/]]
+- [[http://ubuntuhandbook.org/index.php/2019/11/share-folder-ubuntu-18-04-step-by-step-guide/][Referensi:
+  Share a folder in ubuntu]]
+- [[https://linuxconfig.org/how-to-configure-static-ip-address-on-ubuntu-18-04-bionic-beaver-linux][Referensi:
+  Setting LAN in ubuntu]]
+
+*** Mapping IP Addresses
+    :PROPERTIES:
+    :CUSTOM_ID: mapping-ip-addresses
+    :END:
+
+Untuk mapping ip-address:
+
+#+BEGIN_EXAMPLE
+    sudo vim /etc/hosts
+#+END_EXAMPLE
+
+Cara ini hanya berlaku untuk mesin komputer tersebut. Agar bisa
+digunakan oleh komputer lain dalam network yang sama, perlu menggunakan
+DNS server. DNS server bisa diinstall di Raspberry Pi.
+
+** Untar
+   :PROPERTIES:
+   :CUSTOM_ID: untar
+   :END:
+
+#+BEGIN_EXAMPLE
+    $ tar -xzf filename.tar.gz
+#+END_EXAMPLE
+
+** CPU Info
+   :PROPERTIES:
+   :CUSTOM_ID: cpu-info
+   :END:
+
+#+BEGIN_EXAMPLE
+    $ cat /proc/cpuinfo
+#+END_EXAMPLE
+
+** Kopi ke Clipboard
+   :PROPERTIES:
+   :CUSTOM_ID: kopi-ke-clipboard
+   :END:
+
+*Install*
+
+#+BEGIN_EXAMPLE
+    $ sudo apt-get install xclip
+#+END_EXAMPLE
+
+*Kopi pwd*
+
+#+BEGIN_EXAMPLE
+    $ pwd | xclip
+#+END_EXAMPLE
+
+*Output*
+
+#+BEGIN_EXAMPLE
+    $ xclip -o 
+#+END_EXAMPLE
+
+** Issues
+   :PROPERTIES:
+   :CUSTOM_ID: issues
+   :END:
+
+- broken installation
+
+#+BEGIN_EXAMPLE
+    $ sudo apt-get install --fix-broken
+#+END_EXAMPLE
