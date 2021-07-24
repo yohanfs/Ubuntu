@@ -1,8 +1,8 @@
 #+STARTUP: overview
+#+TITLE: Ubuntu
 
-* Ubuntu
-** Getting Started
-*** Install Softwares
+* Getting Started
+** Install Softwares
 
 - snap
 
@@ -18,7 +18,7 @@
 
 $DEB adalah path ke instalasi file (deb).
 
-*** Uninstall Softwares
+** Uninstall Softwares
 
 *apt*
 
@@ -28,7 +28,7 @@ $DEB adalah path ke instalasi file (deb).
 
 :    $ sudo snap remove <software name>
 
-*** Installed Softwares
+** Installed Softwares
 
 *apt*
 
@@ -38,12 +38,12 @@ $DEB adalah path ke instalasi file (deb).
 
 :    $ snap list
 
-*** Vim
+** Vim
 
 - install: sudo apt-get install vim
 - [[https://github.com/yohanfs/.vim][vimrc]]
-
-*** Git
+  
+** Git
 
 - Command:
 
@@ -56,7 +56,12 @@ $DEB adalah path ke instalasi file (deb).
 - [[https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-18-04][Install]]
 - [[https://wiki.paparazziuav.org/wiki/Github_manual_for_Ubuntu][SSH]]
 
-*** Pandoc
+Enable ssh di Ubuntu:
+
+: sudo apt-get install openssh-server
+: sudo systemctl status ssh
+
+** Pandoc
 
 - Install
 
@@ -68,13 +73,13 @@ $DEB adalah path ke instalasi file (deb).
 - $DEB adalah path ke instalasi file (deb)
 - [[https://pandoc.org/installing.html][Referensi]]
 
-*** Python
+** Python
     
 - Sudah terinstall secara default
 - Cek di terminal: python3 ---version
 - Install pip: sudo apt-get -y install python3-pip
 
-*** Inkscape
+** Inkscape
 
 - [[https://inkscape.org/release/][Web: inkscape]]
 - Go to the “Ubuntu Software” atau
@@ -85,16 +90,16 @@ $DEB adalah path ke instalasi file (deb).
     $ sudo apt install inkscape
 #+END_EXAMPLE
 
-*** Make
+** Make
 
 - Install: sudo apt-get install make
 
-*** Markdown Editor (ReText)
+** Markdown Editor (ReText)
 
 - Command: sudo apt-get install -y retext
 - [[https://www.hiroom2.com/2017/05/16/ubuntu-16-04-write-markdown-with-retext/][Referensi]]
 
-*** Latex
+** Latex
 
 - [[https://www.tecrobust.com/insta-latex-ubuntu-texmaker-linux-ubuntu-latest/][Texlive]]
 
@@ -121,7 +126,7 @@ Tambahkan [arch=amd64] sehingga menjadi:
     $ deb [arch=amd64] http://miktex.org/download/ubuntu focal universe
 #+END_EXAMPLE
 
-*** Google Chrome
+** Google Chrome
 
 - Google Chrome tidak tersedia di Ubuntu Software
 - [[https://itsfoss.com/install-chrome-ubuntu/][Install Google Chrome]]
@@ -131,14 +136,14 @@ Tambahkan [arch=amd64] sehingga menjadi:
     $ sudo dpkg -i google-chrome-stable_current_amd64.deb
 #+END_EXAMPLE
 
-*** Terminal PDF
+** Terminal PDF
 
 - [[http://manpages.ubuntu.com/manpages/bionic/man1/pdfunite.1.html][merge pdf: pdfunite]]
 - Example: pdfunite sample1.pdf sample2.pdf sample.pdf
 - [[http://qpdf.sourceforge.net/][extract pdf: qpdf]]
 - [[https://www.pdflabs.com/docs/pdftk-cli-examples/][pdftk]]
 
-*** Tree
+** Tree
 
 /Directory tree/ bisa diprint di terminal dengan tree command. Command
 tersebut adalah built-in di Windows. Sedangkan di ubuntu harus diinstall
@@ -155,29 +160,29 @@ Hasilnya:
 
 [[file:images/tree.png]]
 
-*** reStructuredText
+** reStructuredText
 
 - [[https://pypi.org/project/rst2html/][rst2html]] : sudo pip3 install rst2html
 - [[https://pypi.org/project/rst2pdf/][rst2pdf]] : sudo pip3 install rst2pdf
 
-*** Shotwell
+** Shotwell
 
 Shotwell adalah image viewer dan editor.
 
-*** Inotifywait
+** Inotifywait
 
 Inotifywait berguna untuk memantau aktivitas sebuah folder atau file.
 
 :    $ sudo apt-get install inotify-tools
 
-*** Zathura
+** Zathura
 
 Simple pdf viewer.
 
 :    $ sudo apt-get install zathura 
 
-*** Install Printer
-**** Canon
+** Install Printer
+*** Canon
 
 Printer canon diinstall di ubuntu dengan cara sebagai berikut:
 
@@ -195,7 +200,7 @@ Printer canon diinstall di ubuntu dengan cara sebagai berikut:
 
 - [[https://askubuntu.com/questions/75014/how-can-i-install-a-canon-printer-or-scanner-driver][Askubuntu: Canon Printer]]
 
-*** Terminal Multiplexer
+** Terminal Multiplexer
 
 Tmux adalah /terminal multiplexer/ yang memungkinkan untuk membuka
 banyak tab dalam satu terminal.
@@ -227,7 +232,7 @@ banyak tab dalam satu terminal.
 - [[https://github.com/tmux/tmux/wiki][github: tmux]]
 - [[https://linuxize.com/post/getting-started-with-tmux][linuxize: getting started with tmux]]
 
-*** Only Office
+** Only Office
 
 Alternatif untuk Microsoft Office.
 
@@ -241,11 +246,11 @@ menyimpan font-nya.
 
 - [[https://github.com/justrajdeep/fonts][Download fonts]]
 
-*** SoftMaker FreeOffice
+** SoftMaker FreeOffice
 
 Alternatif untuk Microsoft Office. Download di [[https://www.freeoffice.com/en/][www.freeoffice.com]].
 
-** Hieararki Filesystem
+* Hieararki Filesystem
 
 Sistem folder di ubuntu dan deskripsinya:
 
@@ -275,7 +280,7 @@ Sistem folder di ubuntu dan deskripsinya:
 - Tldp - General Overview of The Linux File System
 - [[https://www.nixtutor.com/linux/understanding-the-linux-directory-layout/][Understanding the linux directory layout]]
 
-** Bootable Flash Drive
+* Bootable Flash Drive
 
 Berikut ini adalah langkah-langkah untuk membuat bootable usb. Bootable
 usb ini diperuntukkan untuk menginstall sebuah operating system (OS)
@@ -292,7 +297,7 @@ misalnya ubuntu dan windows melalui usb.
 
 - [[https://askubuntu.com/questions/876058/bootable-flash-drive-for-ubuntu][Bootable flash drive for ubuntu]]
 
-** Partisi Hardisk
+* Partisi Hardisk
 
 *Gparted*
 
@@ -323,7 +328,7 @@ atau
 
 uuid = /universal unique identifier/
 
-** Cloning Disk
+* Cloning Disk
 
 Cloning disk bisa menggunakan dd command. Disk tujuan harus sama atau
 lebih besar dari disk yang dicloning. Apabila menggunakan disk tujuan
@@ -346,7 +351,7 @@ Contoh:
 [[https://snapshooter.io/blog/how-to-clone-your-linux-harddrive-with-dd][How
 to clone your linux harddrive with dd]]
 
-** Basic Command
+* Basic Command
 
 Berikut ini adalah basic command ubuntu yang sering saya gunakan:
 
@@ -374,7 +379,7 @@ Berikut ini adalah basic command ubuntu yang sering saya gunakan:
 | view beberapa baris csv data      | head contoh.csv                                     |
 | list disk                         | lsblk                                               |
 
-** Akses Network Drive
+* Akses Network Drive
 
 Ada 2 metode untuk akses network drive di ubuntu.
 
@@ -394,7 +399,7 @@ kemudian ketik smbclient //ip-address/L, maka akan muncul pesan:
 
 :    tree connect failed: NT_STATUS_REQUEST_NOT_ACCEPTED
 
-** Mounting Drive
+* Mounting Drive
 
 *Manual*
 
@@ -449,7 +454,7 @@ Referensi:
 
 - [[https://confluence.jaytaala.com/display/TKB/Mount+drive+in+linux+and+set+auto-mount+at+boot][automatic mounting drive]]
 
-** Mounting Shared Drive
+* Mounting Shared Drive
 
 - Buatlah mount point, misalnya =/mnt/Data=
 
@@ -492,7 +497,7 @@ Referensi:
 
 - [[https://linuxize.com/post/how-to-mount-cifs-windows-share-on-linux/][Mount a network shared drive]]
 
-** Change Permission
+* Change Permission
 
 Untuk melihat permission dari file atau folder:
 
@@ -545,7 +550,7 @@ bisa menggunakan /command/ berikut:
 
 - [[https://opensource.com/article/19/6/understanding-linux-permissions][change permission]]
 
-** Change Password
+* Change Password
 
 Ganti password:
 
@@ -555,7 +560,7 @@ Ganti password root user:
 
 :    $ sudo passwd
 
-** UID dan GID
+* UID dan GID
 
 Mencari uid user:
 
@@ -588,7 +593,7 @@ Menambah user ke grup:
 - [[https://medium.com/@dhananjay4058/what-does-sudo-usermod-a-g-group-user-do-on-linux-b1ab7ffbba9c][Sudo
   usermod]]
 
-** Umask
+* Umask
 
 Umask (user file-creation mode mask) digunakan untuk menentukan file
 permission dari file yang baru dibuat.
@@ -618,15 +623,15 @@ Untuk umask=077, pengertiannya adalah:
 
 - [[https://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html][What is umask?]]
 
-** Kapasitas Disk
+* Kapasitas Disk
 
 :    df -h
 
-** Disk Size 
+* Disk Size 
 
 : du -sh /path
 
-** Rsync
+* Rsync
 
 Berguna untuk sinkronisasi file atau folder antara 2 lokasi di internal
 komputer atau ke remote. Rync juga hanya akan mengkopi data yang berbeda
@@ -665,14 +670,14 @@ dari 2 lokasi tersebut sehingga lebih efisien.
 
 - [[https://linuxize.com/post/how-to-use-rsync-for-local-and-remote-data-transfer-and-synchronization/][Rsync command in linux]]
 
-** Memory
+* Memory
 
 Untuk melihat status penggunaan memory:
 
 :    $ vmstat -s
 
-** Networking
-*** Share Folders
+* Networking
+** Share Folders
 
 - [[https://ubuntu.com/tutorials/install-and-configure-samba#2-installing-samba][Install Samba]]
 
@@ -704,7 +709,7 @@ Tambahkan /script/ berikut pada bagian akhir smb.conf
 - [[http://ubuntuhandbook.org/index.php/2019/11/share-folder-ubuntu-18-04-step-by-step-guide/][Referensi: Share a folder in ubuntu]]
 - [[https://linuxconfig.org/how-to-configure-static-ip-address-on-ubuntu-18-04-bionic-beaver-linux][Referensi: Setting LAN in ubuntu]]
 
-*** Mapping IP Addresses
+** Mapping IP Addresses
 
 Untuk mapping ip-address:
 
@@ -714,15 +719,15 @@ Cara ini hanya berlaku untuk mesin komputer tersebut. Agar bisa
 digunakan oleh komputer lain dalam network yang sama, perlu menggunakan
 DNS server. DNS server bisa diinstall di Raspberry Pi.
 
-** Untar
+* Untar
 
 :    $ tar -xzf filename.tar.gz
 
-** CPU Info
+* CPU Info
 
 :    $ cat /proc/cpuinfo
 
-** Kopi ke Clipboard
+* Kopi ke Clipboard
 
 *Install*
 
@@ -736,7 +741,7 @@ DNS server. DNS server bisa diinstall di Raspberry Pi.
 
 :    $ xclip -o 
 
-** Issues
+* Issues
 
 - broken installation
 
