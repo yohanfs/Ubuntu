@@ -400,8 +400,7 @@ kemudian ketik smbclient //ip-address/L, maka akan muncul pesan:
 :    tree connect failed: NT_STATUS_REQUEST_NOT_ACCEPTED
 
 * Mounting Drive
-
-*Manual*
+** Manual
 
 Buat sebuah folder sebagai /mount point/, misalnya =/mnt/Data=.
 
@@ -414,7 +413,7 @@ Alamat /dev/sdb6, dapat dilihat dari:
 
 :    $ lsblk
 
-*Auto Mounting*
+** Auto Mounting
 
 File yang harus diedit adalah =/etc/fstab=. Sebelumnya cari terlebih
 dahulu UUID dari drive yang akan dimounting.
@@ -423,11 +422,21 @@ dahulu UUID dari drive yang akan dimounting.
 
 Kemudian editlah =/etc/fstab=, misalnya:
 
-- untuk internal drive
+*** untuk internal drive
+**** Ubuntu
 
 :    UUID=xxxxxxx /mnt/Data   ext4    defaults        0       0        
 
-- untuk ekternal usb drive
+**** Ubuntu Mate
+
+:    UUID=xxxxxxx /mnt/Data   ext4    defaults        0       2
+
+Jika ada issue dengan file permission, jalankan command berikut setelah 
+restart komputer. 
+
+:    sudo chown -R name(user):name(user) /mnt/Data        
+
+*** untuk ekternal usb drive
 
 :    UUID=xxxxxxx /mnt/usb    ntfs    uid=1000,gid=1000,umask=022 0 1  
 
