@@ -752,6 +752,12 @@ DNS server. DNS server bisa diinstall di Raspberry Pi.
 
 :    $ xclip -o 
 
+* Scanner
+
+Gunakan aplikasi simple scan.
+
+: sudo apt-get install simple-scan
+
 * Issues
 
 - broken installation
