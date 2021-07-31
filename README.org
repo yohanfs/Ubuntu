@@ -91,7 +91,7 @@ Enable ssh di Ubuntu:
 #+END_EXAMPLE
 
 ** Make
-
+   
 - Install: sudo apt-get install make
 
 ** Markdown Editor (ReText)
@@ -758,8 +758,16 @@ Gunakan aplikasi simple scan.
 
 : sudo apt-get install simple-scan
 
+* Crash
+
+Tekan Ctrl + Alt + F3. Kemudian jalankan:
+
+: sudo systemctl restart gdm3
+
 * Issues
 
 - broken installation
 
 :    $ sudo apt-get install --fix-broken
+
+
