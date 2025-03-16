@@ -1,10 +1,3 @@
----
-title: Ubuntu
----
-
-```{=org}
-#+STARTUP: overview
-```
 # Getting Started
 
 ## Install Softwares
@@ -289,6 +282,8 @@ Alternatif untuk Microsoft Office.
 -   Install via Snap (setting juga file permission di snap page)
 -   Untuk menambahkan font, simpan .ttf format di:
 
+**Install**
+
 ``` example
    /usr/share/fonts/truetype
 ```
@@ -302,6 +297,14 @@ menyimpan font-nya.
 
 Alternatif untuk Microsoft Office. Download di
 [www.freeoffice.com](https://www.freeoffice.com/en/).
+
+## Sushi
+
+Preview sebuah file (pdf, png, etc) dengan hanya menekan tombol space bar pada keyboard.
+
+``` 
+   sudo apt install gnome-sushi
+```
 
 # Hieararki Filesystem
 
